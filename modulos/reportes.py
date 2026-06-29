@@ -1,5 +1,11 @@
 import streamlit as st
+import pandas as pd
 from config.conexion import consultar_df
+
+
+def numero(valor, defecto=0.0):
+    valor = pd.to_numeric(valor, errors="coerce")
+    return float(defecto if pd.isna(valor) else valor)
 
 
 def mostrar():
@@ -15,6 +21,7 @@ def mostrar():
         FROM detalle_venta d
         INNER JOIN producto p ON d.id_producto = p.id_producto
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
+        WHERE p.nombre <> 'nombre'
         GROUP BY p.id_producto, p.nombre, c.nombre
         ORDER BY ingresos DESC
         LIMIT 10
@@ -23,8 +30,10 @@ def mostrar():
     if top.empty:
         st.info("Aún no hay ventas registradas para generar este reporte.")
     else:
+        for col in ["unidades_vendidas", "ingresos", "utilidad_estimada"]:
+            top[col] = pd.to_numeric(top[col], errors="coerce").fillna(0)
         estrella = top.iloc[0]
-        st.success(f"Producto estrella por ingresos: {estrella['producto']} (${float(estrella['ingresos']):,.2f})")
+        st.success(f"Producto estrella por ingresos: {estrella['producto']} (${numero(estrella['ingresos']):,.2f})")
         st.dataframe(top, use_container_width=True, hide_index=True)
         st.bar_chart(top.set_index("producto")[["ingresos"]])
 
@@ -42,6 +51,7 @@ def mostrar():
     if mensual.empty:
         st.info("No hay ventas para graficar.")
     else:
+        mensual["ingresos"] = pd.to_numeric(mensual["ingresos"], errors="coerce").fillna(0)
         st.dataframe(mensual, use_container_width=True, hide_index=True)
         st.line_chart(mensual.set_index("mes")[["ingresos"]])
 
@@ -55,7 +65,7 @@ def mostrar():
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN detalle_venta d ON p.id_producto = d.id_producto
         LEFT JOIN venta v ON d.id_venta = v.id_venta
-        WHERE p.activo = 1
+        WHERE p.activo = 1 AND p.nombre <> 'nombre'
         GROUP BY p.id_producto, p.nombre, c.nombre, p.stock_actual, p.precio_venta
         HAVING unidades_vendidas <= 1 OR ultima_venta IS NULL
         ORDER BY unidades_vendidas ASC, p.stock_actual DESC
@@ -73,7 +83,7 @@ def mostrar():
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN producto_proveedor pp ON p.id_producto = pp.id_producto AND pp.es_principal = 1
         LEFT JOIN proveedor pr ON pp.id_proveedor = pr.id_proveedor
-        WHERE p.activo = 1 AND p.stock_actual <= p.stock_minimo
+        WHERE p.activo = 1 AND p.nombre <> 'nombre' AND p.stock_actual <= p.stock_minimo
         ORDER BY p.stock_actual ASC
         """
     )
@@ -87,7 +97,10 @@ def mostrar():
         GROUP BY metodo_pago
         """
     )
-    if not pagos.empty:
+    if pagos.empty:
+        st.info("Aún no hay ventas por método de pago.")
+    else:
+        pagos["total"] = pd.to_numeric(pagos["total"], errors="coerce").fillna(0)
         st.dataframe(pagos, use_container_width=True, hide_index=True)
         st.bar_chart(pagos.set_index("metodo_pago")[["total"]])
 
@@ -99,6 +112,7 @@ def mostrar():
         FROM movimiento_inventario m
         INNER JOIN producto p ON m.id_producto = p.id_producto
         INNER JOIN usuario u ON m.id_usuario = u.id_usuario
+        WHERE p.nombre <> 'nombre'
         ORDER BY m.fecha DESC
         LIMIT 30
         """

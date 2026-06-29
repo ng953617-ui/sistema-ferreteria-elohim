@@ -1,5 +1,11 @@
 import streamlit as st
+import pandas as pd
 from config.conexion import consultar_df, conectar
+
+
+def numero(valor, defecto=0.0):
+    valor = pd.to_numeric(valor, errors="coerce")
+    return float(defecto if pd.isna(valor) else valor)
 
 
 def registrar_compra(id_proveedor, id_producto, cantidad, precio_unitario, id_usuario):
@@ -59,18 +65,18 @@ def mostrar():
         LEFT JOIN categoria c ON p.id_categoria = c.id_categoria
         LEFT JOIN producto_proveedor pp ON p.id_producto = pp.id_producto AND pp.es_principal = 1
         LEFT JOIN proveedor pr ON pp.id_proveedor = pr.id_proveedor
-        WHERE p.activo = 1 AND p.stock_actual <= p.stock_minimo
+        WHERE p.activo = 1 AND p.nombre <> 'nombre' AND p.stock_actual <= p.stock_minimo
         ORDER BY p.stock_actual ASC
         """
     )
     st.dataframe(sugeridas, use_container_width=True, hide_index=True)
 
     st.subheader("Registrar orden de compra recibida")
-    proveedores = consultar_df("SELECT id_proveedor, nombre_razon_social FROM proveedor WHERE activo = 1 ORDER BY nombre_razon_social")
-    productos = consultar_df("SELECT id_producto, nombre, stock_actual, precio_compra FROM producto WHERE activo = 1 ORDER BY nombre")
+    proveedores = consultar_df("SELECT id_proveedor, nombre_razon_social FROM proveedor WHERE activo = 1 AND nombre_razon_social <> 'nombre_razon_social' ORDER BY nombre_razon_social")
+    productos = consultar_df("SELECT id_producto, nombre, stock_actual, precio_compra FROM producto WHERE activo = 1 AND nombre <> 'nombre' ORDER BY nombre")
 
     if proveedores.empty or productos.empty:
-        st.warning("Debe existir al menos un proveedor y un producto activo.")
+        st.warning("Debe existir al menos un proveedor y un producto activo. Si no aparecen, reimporte database/schema.sql.")
         return
 
     with st.form("form_compra"):
@@ -98,8 +104,11 @@ def mostrar():
         SELECT oc.id_oc, oc.fecha, pr.nombre_razon_social AS proveedor, oc.estado, oc.total
         FROM orden_compra oc
         INNER JOIN proveedor pr ON oc.id_proveedor = pr.id_proveedor
+        WHERE pr.nombre_razon_social <> 'nombre_razon_social'
         ORDER BY oc.fecha DESC
         LIMIT 20
         """
     )
+    if "total" in historial.columns:
+        historial["total"] = pd.to_numeric(historial["total"], errors="coerce").fillna(0)
     st.dataframe(historial, use_container_width=True, hide_index=True)

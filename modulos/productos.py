@@ -1,17 +1,28 @@
 import streamlit as st
+import pandas as pd
 from config.conexion import consultar_df, conectar, ejecutar
 
 
+def numero(valor, defecto=0.0):
+    valor = pd.to_numeric(valor, errors="coerce")
+    return float(defecto if pd.isna(valor) else valor)
+
+
 def cargar_categorias():
-    return consultar_df("SELECT id_categoria, nombre FROM categoria ORDER BY nombre")
+    return consultar_df("SELECT id_categoria, nombre FROM categoria WHERE nombre <> 'nombre' ORDER BY nombre")
 
 
 def cargar_ubicaciones():
-    return consultar_df("SELECT id_ubicacion, nombre FROM ubicacion ORDER BY nombre")
+    return consultar_df("SELECT id_ubicacion, nombre FROM ubicacion WHERE nombre <> 'nombre' ORDER BY nombre")
 
 
 def cargar_proveedores():
-    return consultar_df("SELECT id_proveedor, nombre_razon_social FROM proveedor ORDER BY nombre_razon_social")
+    return consultar_df("""
+        SELECT id_proveedor, nombre_razon_social
+        FROM proveedor
+        WHERE activo = 1 AND nombre_razon_social <> 'nombre_razon_social'
+        ORDER BY nombre_razon_social
+    """)
 
 
 def proveedor_principal_sql():
@@ -67,7 +78,7 @@ def registrar_producto_con_movimiento(datos, id_proveedor, id_usuario):
 
 
 def actualizar_producto_con_movimiento(id_producto, actual, nuevo_stock, nuevo_minimo, nuevo_compra, nuevo_venta, id_usuario):
-    diferencia = float(nuevo_stock) - float(actual["stock_actual"])
+    diferencia = float(nuevo_stock) - numero(actual["stock_actual"])
     conexion = conectar()
     try:
         with conexion.cursor() as cursor:
@@ -99,7 +110,7 @@ def mostrar(modo_consulta=False):
     st.title("📦 Productos e inventario" if not modo_consulta else "🔎 Consulta de productos")
 
     busqueda = st.text_input("Buscar por código, nombre o descripción")
-    condicion = "WHERE p.activo = 1"
+    condicion = "WHERE p.activo = 1 AND p.nombre <> 'nombre'"
     params = []
     if busqueda:
         condicion += " AND (p.codigo_barras LIKE %s OR p.nombre LIKE %s OR p.descripcion LIKE %s)"
@@ -123,14 +134,19 @@ def mostrar(modo_consulta=False):
         params,
     )
 
-    columnas_visibles = [
-        "codigo", "nombre", "categoria", "unidad", "stock_actual", "stock_minimo", "precio_venta", "ubicacion", "entrada"
-    ]
+    for col in ["stock_actual", "stock_minimo", "precio_venta", "precio_compra"]:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+    columnas_visibles = ["codigo", "nombre", "categoria", "unidad", "stock_actual", "stock_minimo", "precio_venta", "ubicacion", "entrada"]
     if not modo_consulta:
         columnas_visibles.insert(8, "precio_compra")
         columnas_visibles.append("proveedor_principal")
 
-    st.dataframe(df[columnas_visibles] if not df.empty else df, use_container_width=True, hide_index=True)
+    if df.empty:
+        st.info("No hay productos registrados o no coinciden con la búsqueda.")
+    else:
+        st.dataframe(df[columnas_visibles], use_container_width=True, hide_index=True)
 
     if modo_consulta:
         st.info("Modo vendedor: solo consulta de stock y precios. No permite modificar costos ni márgenes.")
@@ -140,6 +156,10 @@ def mostrar(modo_consulta=False):
     categorias = cargar_categorias()
     ubicaciones = cargar_ubicaciones()
     proveedores = cargar_proveedores()
+
+    if categorias.empty or ubicaciones.empty or proveedores.empty:
+        st.warning("Primero debe importar correctamente el archivo database/schema.sql para cargar categorías, ubicaciones y proveedores.")
+        return
 
     with st.form("form_producto"):
         c1, c2, c3 = st.columns(3)
@@ -168,52 +188,59 @@ def mostrar(modo_consulta=False):
             id_categoria = int(categorias.loc[categorias["nombre"] == categoria_nombre, "id_categoria"].iloc[0])
             id_ubicacion = int(ubicaciones.loc[ubicaciones["nombre"] == ubicacion_nombre, "id_ubicacion"].iloc[0])
             id_proveedor = int(proveedores.loc[proveedores["nombre_razon_social"] == proveedor_nombre, "id_proveedor"].iloc[0])
-            registrar_producto_con_movimiento(
-                {
-                    "codigo": codigo or None,
-                    "nombre": nombre,
-                    "descripcion": descripcion,
-                    "id_categoria": id_categoria,
-                    "id_ubicacion": id_ubicacion,
-                    "unidad": unidad,
-                    "stock": stock,
-                    "stock_minimo": stock_minimo,
-                    "precio_compra": precio_compra,
-                    "precio_venta": precio_venta,
-                },
-                id_proveedor,
-                st.session_state["usuario"]["id_usuario"],
-            )
-            st.success("Producto guardado correctamente.")
-            st.rerun()
+            try:
+                registrar_producto_con_movimiento(
+                    {
+                        "codigo": codigo or None,
+                        "nombre": nombre,
+                        "descripcion": descripcion,
+                        "id_categoria": id_categoria,
+                        "id_ubicacion": id_ubicacion,
+                        "unidad": unidad,
+                        "stock": stock,
+                        "stock_minimo": stock_minimo,
+                        "precio_compra": precio_compra,
+                        "precio_venta": precio_venta,
+                    },
+                    id_proveedor,
+                    st.session_state["usuario"]["id_usuario"],
+                )
+                st.success("Producto guardado correctamente.")
+                st.rerun()
+            except Exception as e:
+                st.error("No fue posible guardar el producto.")
+                st.exception(e)
 
     st.subheader("Actualizar stock, precios o ubicación")
     if df.empty:
         st.info("No hay productos para actualizar.")
         return
 
-    opciones = {f"{row.nombre} | Stock: {row.stock_actual} | ${row.precio_venta:.2f}": int(row.id_producto) for row in df.itertuples()}
+    opciones = {
+        f"{row.nombre} | Stock: {numero(row.stock_actual):,.2f} | ${numero(row.precio_venta):,.2f}": int(row.id_producto)
+        for row in df.itertuples()
+    }
     seleccionado = st.selectbox("Seleccione producto", list(opciones.keys()))
     id_producto = opciones[seleccionado]
-    actual = consultar_df("SELECT * FROM producto WHERE id_producto = %s", [id_producto]).iloc[0]
+    actual_df = consultar_df("SELECT * FROM producto WHERE id_producto = %s", [id_producto])
+    if actual_df.empty:
+        st.warning("No se encontró el producto seleccionado.")
+        return
+    actual = actual_df.iloc[0]
 
     with st.form("form_actualizar"):
         c1, c2, c3, c4 = st.columns(4)
-        nuevo_stock = c1.number_input("Stock", min_value=0.0, value=float(actual["stock_actual"]), step=1.0)
-        nuevo_minimo = c2.number_input("Stock mínimo", min_value=0.0, value=float(actual["stock_minimo"]), step=1.0)
-        nuevo_compra = c3.number_input("Precio compra", min_value=0.0, value=float(actual["precio_compra"]), step=0.01)
-        nuevo_venta = c4.number_input("Precio venta", min_value=0.0, value=float(actual["precio_venta"]), step=0.01)
+        nuevo_stock = c1.number_input("Stock", min_value=0.0, value=numero(actual["stock_actual"]), step=1.0)
+        nuevo_minimo = c2.number_input("Stock mínimo", min_value=0.0, value=numero(actual["stock_minimo"]), step=1.0)
+        nuevo_compra = c3.number_input("Precio compra", min_value=0.0, value=numero(actual["precio_compra"]), step=0.01)
+        nuevo_venta = c4.number_input("Precio venta", min_value=0.0, value=numero(actual["precio_venta"]), step=0.01)
         actualizar = st.form_submit_button("Actualizar producto")
 
     if actualizar:
-        actualizar_producto_con_movimiento(
-            id_producto,
-            actual,
-            nuevo_stock,
-            nuevo_minimo,
-            nuevo_compra,
-            nuevo_venta,
-            st.session_state["usuario"]["id_usuario"],
-        )
-        st.success("Producto actualizado correctamente y movimiento de inventario registrado si hubo cambio de stock.")
-        st.rerun()
+        try:
+            actualizar_producto_con_movimiento(id_producto, actual, nuevo_stock, nuevo_minimo, nuevo_compra, nuevo_venta, st.session_state["usuario"]["id_usuario"])
+            st.success("Producto actualizado correctamente y movimiento de inventario registrado si hubo cambio de stock.")
+            st.rerun()
+        except Exception as e:
+            st.error("No fue posible actualizar el producto.")
+            st.exception(e)

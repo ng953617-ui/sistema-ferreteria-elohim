@@ -1,0 +1,59 @@
+ENTREGABLES - SGI FERRETERÍA ELOHIM
+
+1. Enlace público de la aplicación funcionando en Streamlit Cloud:
+   [PEGAR AQUÍ EL ENLACE DE STREAMLIT]
+
+2. Repositorio de GitHub:
+   [PEGAR AQUÍ EL ENLACE DEL REPOSITORIO]
+
+3. Base de datos:
+   Plataforma: Clever Cloud
+   Motor: MySQL
+   Administración: phpMyAdmin
+
+4. Acceso a phpMyAdmin / conexión de base de datos:
+   Host: [PEGAR HOST]
+   Database Name: [PEGAR DATABASE]
+   User: [PEGAR USER]
+   Password: [PEGAR PASSWORD]
+   Port: 3306
+
+5. Archivo SQL importado:
+   database/schema.sql
+
+6. Archivo principal de la aplicación:
+   app.py
+
+7. Usuarios de prueba:
+   marvin / 1234     Administrador Principal
+   dayana / 1234     Administrador/Supervisor
+   juanita / 1234    Vendedor
+   bryan / 1234      Vendedor
+
+8. Tablas creadas, alineadas al diagrama ER:
+   usuario
+   categoria
+   ubicacion
+   proveedor
+   producto
+   producto_proveedor
+   cliente
+   consumidor_final
+   contribuyente
+   venta
+   detalle_venta
+   orden_compra
+   detalle_compra
+   arqueo_caja
+   movimiento_inventario
+
+9. Módulos del sistema:
+   Inicio
+   Productos e inventario
+   Clientes y datos fiscales
+   Proveedores
+   Punto de venta
+   Compras y reposición
+   Cierre de caja
+   Reportes
+   Usuarios y roles

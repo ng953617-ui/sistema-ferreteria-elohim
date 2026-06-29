@@ -1,6 +1,12 @@
 import streamlit as st
+import pandas as pd
 from datetime import date
 from config.conexion import consultar_df, ejecutar
+
+
+def numero(valor, defecto=0.0):
+    valor = pd.to_numeric(valor, errors="coerce")
+    return float(defecto if pd.isna(valor) else valor)
 
 
 def mostrar():
@@ -22,11 +28,12 @@ def mostrar():
     efectivo_sistema = 0.0
     transferencia_sistema = 0.0
     if not resumen.empty:
+        resumen["total"] = pd.to_numeric(resumen["total"], errors="coerce").fillna(0)
         for row in resumen.itertuples():
             if row.metodo_pago == "Efectivo":
-                efectivo_sistema = float(row.total)
+                efectivo_sistema = numero(row.total)
             elif row.metodo_pago == "Transferencia":
-                transferencia_sistema = float(row.total)
+                transferencia_sistema = numero(row.total)
 
     c1, c2, c3 = st.columns(3)
     c1.metric("Efectivo según sistema", f"${efectivo_sistema:,.2f}")
@@ -41,28 +48,23 @@ def mostrar():
         guardar = st.form_submit_button("Guardar cierre de caja")
 
     if guardar:
-        diferencia = efectivo_contado - efectivo_sistema
-        id_usuario = st.session_state["usuario"]["id_usuario"]
-        ejecutar(
-            """
-            INSERT INTO arqueo_caja
-            (fecha, id_usuario, total_efectivo, total_transferencia,
-             efectivo_contado, diferencia_efectivo, total_general, observaciones)
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
-            """,
-            (
-                fecha,
-                id_usuario,
-                efectivo_sistema,
-                transferencia_sistema,
-                efectivo_contado,
-                diferencia,
-                efectivo_sistema + transferencia_sistema,
-                observaciones,
-            ),
-        )
-        st.success("Cierre de caja guardado correctamente.")
-        st.rerun()
+        try:
+            diferencia = efectivo_contado - efectivo_sistema
+            id_usuario = st.session_state["usuario"]["id_usuario"]
+            ejecutar(
+                """
+                INSERT INTO arqueo_caja
+                (fecha, id_usuario, total_efectivo, total_transferencia,
+                 efectivo_contado, diferencia_efectivo, total_general, observaciones)
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
+                """,
+                (fecha, id_usuario, efectivo_sistema, transferencia_sistema, efectivo_contado, diferencia, efectivo_sistema + transferencia_sistema, observaciones),
+            )
+            st.success("Cierre de caja guardado correctamente.")
+            st.rerun()
+        except Exception as e:
+            st.error("No fue posible guardar el cierre de caja.")
+            st.exception(e)
 
     st.subheader("Cierres registrados")
     cierres = consultar_df(

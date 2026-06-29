@@ -13,6 +13,7 @@ def mostrar():
         """
         SELECT id_usuario, usuario_login AS usuario, nombre_completo, rol, activo
         FROM usuario
+        WHERE usuario_login <> 'usuario' AND nombre_completo <> 'nombre_completo'
         ORDER BY rol, nombre_completo
         """
     )

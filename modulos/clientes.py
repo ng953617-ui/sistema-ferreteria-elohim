@@ -19,6 +19,7 @@ def mostrar():
         FROM cliente c
         LEFT JOIN consumidor_final cf ON c.id_cliente = cf.id_cliente
         LEFT JOIN contribuyente ct ON c.id_cliente = ct.id_cliente
+        WHERE c.nombre <> 'nombre'
         ORDER BY c.id_cliente DESC
         """
     )

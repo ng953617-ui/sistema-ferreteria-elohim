@@ -10,6 +10,7 @@ def mostrar():
         """
         SELECT id_proveedor, nombre_razon_social, direccion, telefono, vendedor_asignado, nit, nrc, activo
         FROM proveedor
+        WHERE nombre_razon_social <> 'nombre_razon_social'
         ORDER BY nombre_razon_social
         """
     )
@@ -42,8 +43,8 @@ def mostrar():
             st.rerun()
 
     st.subheader("Relación producto - proveedor")
-    productos = consultar_df("SELECT id_producto, nombre FROM producto WHERE activo = 1 ORDER BY nombre")
-    proveedores = consultar_df("SELECT id_proveedor, nombre_razon_social FROM proveedor WHERE activo = 1 ORDER BY nombre_razon_social")
+    productos = consultar_df("SELECT id_producto, nombre FROM producto WHERE activo = 1 AND nombre <> 'nombre' ORDER BY nombre")
+    proveedores = consultar_df("SELECT id_proveedor, nombre_razon_social FROM proveedor WHERE activo = 1 AND nombre_razon_social <> 'nombre_razon_social' ORDER BY nombre_razon_social")
 
     if productos.empty or proveedores.empty:
         st.info("Debe existir al menos un producto y un proveedor activo.")
@@ -83,6 +84,7 @@ def mostrar():
         FROM producto_proveedor pp
         INNER JOIN producto p ON pp.id_producto = p.id_producto
         INNER JOIN proveedor pr ON pp.id_proveedor = pr.id_proveedor
+        WHERE p.nombre <> 'nombre' AND pr.nombre_razon_social <> 'nombre_razon_social'
         ORDER BY p.nombre, proveedor_principal DESC
         """
     )

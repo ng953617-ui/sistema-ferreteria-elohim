@@ -1,0 +1,23 @@
+INSTRUCCIONES RÁPIDAS - SISTEMA FERRETERÍA ELOHIM
+
+1. Reemplaza en GitHub todos los archivos del repositorio con los archivos de esta carpeta.
+2. En Clever Cloud > PHPMyAdmin, selecciona primero la base de datos bmwax8ai0klmmlwuwmpv.
+3. Importa el archivo database/schema.sql.
+4. Verifica que en la tabla producto aparezcan productos reales, por ejemplo: Cemento gris Fortaleza, Arena lavada, Bloque de concreto.
+5. En Streamlit Cloud > Manage app > Settings > Secrets, usa:
+
+[mysql]
+host = "bmwax8ai0klmmlwuwmpv-mysql.services.clever-cloud.com"
+port = 3306
+database = "bmwax8ai0klmmlwuwmpv"
+user = "ukut6encjnvdsxic"
+password = "TU_PASSWORD_REAL"
+
+6. Guarda Secrets y reinicia la app con Reboot app o Deploy.
+7. Ingresa con:
+   marvin / 1234
+
+IMPORTANTE:
+- No subas secrets.toml con contraseña real a GitHub.
+- Si phpMyAdmin dice #1046 No database selected, selecciona la base bmwax8ai0klmmlwuwmpv antes de importar.
+- Si ves filas donde los datos dicen 'nombre', 'categoria', 'stock_actual', reimporta database/schema.sql seleccionando la base correcta.
