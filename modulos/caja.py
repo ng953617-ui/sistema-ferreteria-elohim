@@ -1,46 +1,49 @@
+"""
+modulos/caja.py
+Arqueo y cierre de caja diario, separando efectivo y transferencia.
+"""
+
 import streamlit as st
-from config.conexion import consultar_df, ejecutar
+import pandas as pd
+from datetime import date
+from config.db import run_query, run_action
 
 
-def _num(df, col):
-    if df.empty or col not in df.columns or df.iloc[0][col] is None:
-        return 0.0
-    return float(df.iloc[0][col])
+def mostrar(rol):
+    st.header("💰 Arqueo de Caja")
 
+    hoy = date.today()
+    ya_existe = run_query("SELECT * FROM ARQUEO_CAJA WHERE Fecha = %s", (hoy,))
 
-def mostrar():
-    st.title("💵 Cierre de caja")
-    fecha = st.date_input("Fecha de cierre")
+    ventas_hoy = run_query(
+        "SELECT Metodo_Pago, SUM(Total) AS Total FROM VENTA WHERE DATE(Fecha) = %s GROUP BY Metodo_Pago",
+        (hoy,)
+    )
+    efectivo = sum(v["Total"] for v in ventas_hoy if v["Metodo_Pago"] == "efectivo") or 0
+    transferencia = sum(v["Total"] for v in ventas_hoy if v["Metodo_Pago"] == "transferencia") or 0
+    total_general = efectivo + transferencia
 
-    efectivo = consultar_df("SELECT COALESCE(SUM(total),0) AS total FROM venta WHERE DATE(fecha)=%s AND metodo_pago='Efectivo'", (fecha,))
-    transferencia = consultar_df("SELECT COALESCE(SUM(total),0) AS total FROM venta WHERE DATE(fecha)=%s AND metodo_pago='Transferencia'", (fecha,))
-    total_ef = _num(efectivo, "total")
-    total_tr = _num(transferencia, "total")
-    total = total_ef + total_tr
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Efectivo", f"${efectivo:.2f}")
+    col2.metric("Transferencia", f"${transferencia:.2f}")
+    col3.metric("Total del día", f"${total_general:.2f}")
 
-    c1, c2, c3 = st.columns(3)
-    c1.metric("Efectivo", f"${total_ef:,.2f}")
-    c2.metric("Transferencia", f"${total_tr:,.2f}")
-    c3.metric("Total general", f"${total:,.2f}")
-
-    obs = st.text_area("Observaciones")
-    if st.button("Registrar arqueo"):
-        ejecutar("""
-            INSERT INTO arqueo_caja (id_usuario, fecha, total_efectivo, total_transferencia, total_general, observaciones)
-            VALUES (%s,%s,%s,%s,%s,%s)
-        """, (st.session_state["usuario"]["id_usuario"], fecha, total_ef, total_tr, total, obs))
-        st.success("Arqueo registrado correctamente.")
-        st.rerun()
-
-    st.subheader("Historial")
-    df = consultar_df("""
-        SELECT a.id_arqueo, a.fecha, u.nombre_completo AS usuario,
-               a.total_efectivo, a.total_transferencia, a.total_general, a.observaciones
-        FROM arqueo_caja a
-        JOIN usuario u ON a.id_usuario=u.id_usuario
-        ORDER BY a.fecha DESC, a.id_arqueo DESC
-    """)
-    if df.empty:
-        st.info("No hay arqueos registrados.")
+    if ya_existe:
+        st.success(f"El arqueo de hoy ({hoy}) ya fue cerrado.")
     else:
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        if st.button("Cerrar caja del día de hoy"):
+            run_action(
+                """INSERT INTO ARQUEO_CAJA (Usuario_ID, Fecha, Total_Efectivo, Total_Transferencia, Total_General)
+                   VALUES (%s,%s,%s,%s,%s)""",
+                (st.session_state["usuario_id"], hoy, efectivo, transferencia, total_general)
+            )
+            st.success("Arqueo de caja registrado.")
+            st.rerun()
+
+    st.divider()
+    st.subheader("Historial de arqueos")
+    historial = run_query("SELECT * FROM ARQUEO_CAJA ORDER BY Fecha DESC LIMIT 30")
+    if historial:
+        st.dataframe(pd.DataFrame(historial), use_container_width=True)
+    else:
+        st.info("Aún no hay arqueos registrados.")

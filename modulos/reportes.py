@@ -1,66 +1,65 @@
+"""
+modulos/reportes.py
+Reportes para toma de decisiones: producto estrella, baja rotación,
+estadísticas mensuales, compras sugeridas.
+"""
+
 import streamlit as st
-from config.conexion import consultar_df
+import pandas as pd
+from config.db import run_query
 
 
-def mostrar():
-    st.title("📊 Reportes e inteligencia de negocio")
+def mostrar(rol):
+    st.header("📊 Reportes")
 
-    st.subheader("Producto estrella y top 10 más vendidos")
-    top = consultar_df("""
-        SELECT p.nombre AS producto, SUM(dv.cantidad) AS cantidad_vendida, SUM(dv.subtotal) AS ingresos
-        FROM detalle_venta dv
-        JOIN producto p ON dv.id_producto=p.id_producto
-        GROUP BY p.id_producto, p.nombre
-        ORDER BY ingresos DESC
-        LIMIT 10
-    """)
-    if top.empty:
-        st.info("Aún no hay ventas suficientes para calcular productos más vendidos.")
-    else:
-        estrella = top.iloc[0]
-        st.success(f"Producto estrella por ingresos: {estrella['producto']} (${float(estrella['ingresos']):,.2f})")
-        st.dataframe(top, use_container_width=True, hide_index=True)
-        st.bar_chart(top.set_index("producto")["ingresos"])
+    tab1, tab2, tab3, tab4 = st.tabs(
+        ["Más vendidos", "Baja rotación", "Ventas mensuales", "Compras sugeridas"]
+    )
 
-    st.subheader("Ventas mensuales")
-    ventas = consultar_df("""
-        SELECT DATE_FORMAT(fecha, '%Y-%m') AS mes, COUNT(*) AS cantidad_ventas, SUM(total) AS ingresos
-        FROM venta
-        GROUP BY DATE_FORMAT(fecha, '%Y-%m')
-        ORDER BY mes
-    """)
-    if ventas.empty:
-        st.info("No hay ventas registradas.")
-    else:
-        st.dataframe(ventas, use_container_width=True, hide_index=True)
-        st.bar_chart(ventas.set_index("mes")["ingresos"])
+    with tab1:
+        top = run_query("""
+            SELECT p.Nombre, SUM(dv.Cantidad) AS Unidades_Vendidas, SUM(dv.Subtotal) AS Ingresos
+            FROM DETALLE_VENTA dv JOIN PRODUCTO p ON dv.Producto_ID = p.ID_Producto
+            GROUP BY p.ID_Producto ORDER BY Ingresos DESC LIMIT 10
+        """)
+        if top:
+            st.dataframe(pd.DataFrame(top), use_container_width=True)
+            st.bar_chart(pd.DataFrame(top).set_index("Nombre")["Ingresos"])
+        else:
+            st.info("Aún no hay ventas registradas.")
 
-    st.subheader("Productos con baja rotación")
-    baja = consultar_df("""
-        SELECT p.id_producto, p.nombre, p.stock_actual, COALESCE(SUM(dv.cantidad),0) AS cantidad_vendida
-        FROM producto p
-        LEFT JOIN detalle_venta dv ON p.id_producto=dv.id_producto
-        WHERE p.activo=1
-        GROUP BY p.id_producto, p.nombre, p.stock_actual
-        HAVING cantidad_vendida = 0
-        ORDER BY p.nombre
-    """)
-    if baja.empty:
-        st.success("No hay productos sin movimiento.")
-    else:
-        st.dataframe(baja, use_container_width=True, hide_index=True)
+    with tab2:
+        baja = run_query("""
+            SELECT p.Nombre, p.Stock_Actual, COALESCE(SUM(dv.Cantidad), 0) AS Vendido
+            FROM PRODUCTO p
+            LEFT JOIN DETALLE_VENTA dv ON p.ID_Producto = dv.Producto_ID
+            GROUP BY p.ID_Producto
+            HAVING Vendido = 0 OR Vendido < 5
+            ORDER BY Vendido ASC
+        """)
+        if baja:
+            st.dataframe(pd.DataFrame(baja), use_container_width=True)
+        else:
+            st.info("No hay productos de baja rotación detectados todavía.")
 
-    st.subheader("Movimientos recientes de inventario")
-    mov = consultar_df("""
-        SELECT mi.id_movimiento, p.nombre AS producto, mi.tipo_movimiento, mi.cantidad,
-               mi.fecha, u.nombre_completo AS usuario, mi.motivo
-        FROM movimiento_inventario mi
-        JOIN producto p ON mi.id_producto=p.id_producto
-        LEFT JOIN usuario u ON mi.id_usuario=u.id_usuario
-        ORDER BY mi.fecha DESC
-        LIMIT 50
-    """)
-    if mov.empty:
-        st.info("No hay movimientos registrados.")
-    else:
-        st.dataframe(mov, use_container_width=True, hide_index=True)
+    with tab3:
+        mensual = run_query("""
+            SELECT DATE_FORMAT(Fecha, '%Y-%m') AS Mes, SUM(Total) AS Ventas
+            FROM VENTA GROUP BY Mes ORDER BY Mes
+        """)
+        if mensual:
+            df = pd.DataFrame(mensual)
+            st.dataframe(df, use_container_width=True)
+            st.line_chart(df.set_index("Mes")["Ventas"])
+        else:
+            st.info("Aún no hay historial de ventas suficiente.")
+
+    with tab4:
+        sugeridas = run_query("""
+            SELECT Nombre, Stock_Actual, Stock_Minimo
+            FROM PRODUCTO WHERE Stock_Actual <= Stock_Minimo
+        """)
+        if sugeridas:
+            st.dataframe(pd.DataFrame(sugeridas), use_container_width=True)
+        else:
+            st.success("No hay productos que requieran reposición urgente.")

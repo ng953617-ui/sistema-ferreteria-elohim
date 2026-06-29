@@ -1,66 +1,106 @@
+"""
+modulos/compras.py
+Órdenes de compra a proveedores. Al marcar como "recibida" se aumenta
+el stock y se genera un movimiento de entrada en inventario.
+"""
+
 import streamlit as st
-from config.conexion import consultar, consultar_df, ejecutar, ejecutar_insert
+import pandas as pd
+from config.db import run_query, run_action
 
 
-def mostrar():
-    st.title("🛒 Compras y reposición")
+def mostrar(rol):
+    st.header("📥 Compras")
 
-    st.subheader("Compras sugeridas por stock mínimo")
-    sugeridas = consultar_df("""
-        SELECT p.id_producto, p.nombre, c.nombre AS categoria, p.stock_actual, p.stock_minimo,
-               GREATEST(p.stock_minimo*2 - p.stock_actual, 1) AS cantidad_sugerida,
-               COALESCE(pr.nombre_razon_social,'Sin proveedor') AS proveedor_principal
-        FROM producto p
-        LEFT JOIN categoria c ON p.id_categoria=c.id_categoria
-        LEFT JOIN producto_proveedor pp ON p.id_producto=pp.id_producto AND pp.es_principal=1
-        LEFT JOIN proveedor pr ON pp.id_proveedor=pr.id_proveedor
-        WHERE p.activo=1 AND p.stock_actual <= p.stock_minimo
-        ORDER BY p.stock_actual ASC
-    """)
-    if sugeridas.empty:
-        st.info("No hay productos bajo stock mínimo.")
-    else:
-        st.dataframe(sugeridas, use_container_width=True, hide_index=True)
+    if "carrito_compra" not in st.session_state:
+        st.session_state["carrito_compra"] = []
 
-    st.subheader("Registrar orden de compra recibida")
-    proveedores = consultar("SELECT id_proveedor, nombre_razon_social FROM proveedor WHERE activo=1 ORDER BY nombre_razon_social")
-    productos = consultar("SELECT id_producto, nombre, precio_compra FROM producto WHERE activo=1 ORDER BY nombre")
-    if not proveedores or not productos:
-        st.warning("Debe existir al menos un proveedor y un producto activo.")
-        return
+    tab1, tab2 = st.tabs(["Nueva orden de compra", "Órdenes registradas"])
 
-    dic_prov = {p["nombre_razon_social"]: p["id_proveedor"] for p in proveedores}
-    dic_prod = {p["nombre"]: p for p in productos}
+    with tab1:
+        proveedores = run_query("SELECT ID_Proveedor, Razon_Social FROM PROVEEDOR")
+        productos = run_query("SELECT ID_Producto, Nombre FROM PRODUCTO")
 
-    with st.form("form_compra"):
-        proveedor = st.selectbox("Proveedor", list(dic_prov.keys()))
-        producto = st.selectbox("Producto", list(dic_prod.keys()))
-        c1, c2 = st.columns(2)
-        cantidad = c1.number_input("Cantidad recibida", min_value=0.01, step=1.0)
-        precio = c2.number_input("Precio unitario", min_value=0.0, step=0.01, value=float(dic_prod[producto]["precio_compra"] or 0))
-        guardar = st.form_submit_button("Registrar compra")
+        if not proveedores or not productos:
+            st.info("Necesitas al menos un proveedor y un producto registrados.")
+        else:
+            prov_map = {p["Razon_Social"]: p["ID_Proveedor"] for p in proveedores}
+            prod_map = {p["Nombre"]: p["ID_Producto"] for p in productos}
 
-    if guardar:
-        total = float(cantidad) * float(precio)
-        user_id = st.session_state["usuario"]["id_usuario"]
-        orden_id = ejecutar_insert("INSERT INTO orden_compra (id_proveedor, estado, total) VALUES (%s,'Recibida',%s)", (dic_prov[proveedor], total))
-        prod_id = dic_prod[producto]["id_producto"]
-        ejecutar("INSERT INTO detalle_compra (id_orden,id_producto,cantidad,precio_unitario) VALUES (%s,%s,%s,%s)",
-                 (orden_id, prod_id, cantidad, precio))
-        ejecutar("UPDATE producto SET stock_actual = stock_actual + %s, precio_compra=%s WHERE id_producto=%s", (cantidad, precio, prod_id))
-        ejecutar("""
-            INSERT INTO movimiento_inventario (id_producto,tipo_movimiento,cantidad,referencia_id,id_usuario,motivo)
-            VALUES (%s,'Entrada',%s,%s,%s,'Compra recibida')
-        """, (prod_id, cantidad, orden_id, user_id))
-        st.success("Compra registrada y stock actualizado.")
-        st.rerun()
+            proveedor_sel = st.selectbox("Proveedor", list(prov_map.keys()))
 
-    st.subheader("Últimas compras")
-    df = consultar_df("""
-        SELECT oc.id_orden, oc.fecha, pr.nombre_razon_social AS proveedor, oc.estado, oc.total
-        FROM orden_compra oc
-        JOIN proveedor pr ON oc.id_proveedor=pr.id_proveedor
-        ORDER BY oc.fecha DESC LIMIT 10
-    """)
-    if not df.empty:
-        st.dataframe(df, use_container_width=True, hide_index=True)
+            col1, col2, col3 = st.columns(3)
+            producto_sel = col1.selectbox("Producto", list(prod_map.keys()))
+            cantidad = col2.number_input("Cantidad", min_value=0.0, step=1.0)
+            precio = col3.number_input("Precio unitario (compra)", min_value=0.0, step=0.01)
+
+            if st.button("Agregar a la orden"):
+                if cantidad > 0:
+                    st.session_state["carrito_compra"].append({
+                        "ID_Producto": prod_map[producto_sel],
+                        "Nombre": producto_sel,
+                        "Cantidad": cantidad,
+                        "Precio_Unitario": precio
+                    })
+                    st.rerun()
+
+            if st.session_state["carrito_compra"]:
+                df = pd.DataFrame(st.session_state["carrito_compra"])
+                df["Subtotal"] = df["Cantidad"] * df["Precio_Unitario"]
+                st.dataframe(df, use_container_width=True)
+                total = df["Subtotal"].sum()
+                st.metric("Total de la orden", f"${total:.2f}")
+
+                if st.button("Emitir orden de compra"):
+                    orden_id = run_action(
+                        "INSERT INTO ORDEN_COMPRA (Proveedor_ID, Estado, Total) VALUES (%s,'pendiente',%s)",
+                        (prov_map[proveedor_sel], float(total))
+                    )
+                    for item in st.session_state["carrito_compra"]:
+                        run_action(
+                            """INSERT INTO DETALLE_COMPRA (Orden_ID, Producto_ID, Cantidad, Precio_Unitario)
+                               VALUES (%s,%s,%s,%s)""",
+                            (orden_id, item["ID_Producto"], item["Cantidad"], item["Precio_Unitario"])
+                        )
+                    st.session_state["carrito_compra"] = []
+                    st.success(f"Orden de compra #{orden_id} emitida.")
+                    st.rerun()
+
+    with tab2:
+        ordenes = run_query("""
+            SELECT o.ID_Orden, p.Razon_Social, o.Fecha, o.Estado, o.Total
+            FROM ORDEN_COMPRA o JOIN PROVEEDOR p ON o.Proveedor_ID = p.ID_Proveedor
+            ORDER BY o.Fecha DESC
+        """)
+        if not ordenes:
+            st.info("No hay órdenes de compra registradas.")
+        else:
+            st.dataframe(pd.DataFrame(ordenes), use_container_width=True)
+
+            pendientes = [o for o in ordenes if o["Estado"] == "pendiente"]
+            if pendientes:
+                ids = {f"Orden #{o['ID_Orden']} - {o['Razon_Social']}": o["ID_Orden"] for o in pendientes}
+                orden_sel = st.selectbox("Marcar como recibida", list(ids.keys()))
+                if st.button("Confirmar recepción de mercancía"):
+                    orden_id = ids[orden_sel]
+                    detalles = run_query(
+                        "SELECT Producto_ID, Cantidad FROM DETALLE_COMPRA WHERE Orden_ID = %s",
+                        (orden_id,)
+                    )
+                    for d in detalles:
+                        run_action(
+                            "UPDATE PRODUCTO SET Stock_Actual = Stock_Actual + %s WHERE ID_Producto = %s",
+                            (d["Cantidad"], d["Producto_ID"])
+                        )
+                        run_action(
+                            """INSERT INTO MOVIMIENTO_INVENTARIO
+                               (Producto_ID, Tipo_Movimiento, Cantidad, Referencia_ID, Usuario_ID, Motivo)
+                               VALUES (%s,'entrada',%s,%s,%s,'Recepción orden de compra')""",
+                            (d["Producto_ID"], d["Cantidad"], orden_id, st.session_state["usuario_id"])
+                        )
+                    run_action(
+                        "UPDATE ORDEN_COMPRA SET Estado='recibida' WHERE ID_Orden = %s",
+                        (orden_id,)
+                    )
+                    st.success("Mercancía recibida y stock actualizado.")
+                    st.rerun()

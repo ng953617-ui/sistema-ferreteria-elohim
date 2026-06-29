@@ -1,28 +1,14 @@
+"""
+app.py
+Punto de entrada de la aplicación Streamlit - Sistema Ferretería ELOHIM.
+"""
+
 import streamlit as st
-from config.conexion import inicializar_bd
 from login import mostrar_login
 from menu import mostrar_menu
+from modulos import productos, proveedores, clientes, ventas, compras, caja, usuarios, reportes
 
-st.set_page_config(
-    page_title="Ferretería Elohim",
-    page_icon="🛠️",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-st.markdown("""
-<style>
-.block-container {padding-top: 2rem;}
-[data-testid="stSidebar"] {min-width: 290px;}
-</style>
-""", unsafe_allow_html=True)
-
-try:
-    inicializar_bd()
-except Exception as e:
-    st.error("No fue posible inicializar la base de datos. Revise los Secrets de Streamlit y que Clever Cloud esté activo.")
-    st.exception(e)
-    st.stop()
+st.set_page_config(page_title="Ferretería ELOHIM", page_icon="🔧", layout="wide")
 
 if "autenticado" not in st.session_state:
     st.session_state["autenticado"] = False
@@ -30,4 +16,22 @@ if "autenticado" not in st.session_state:
 if not st.session_state["autenticado"]:
     mostrar_login()
 else:
-    mostrar_menu()
+    seleccion = mostrar_menu()
+    rol = st.session_state["usuario_rol"]
+
+    if seleccion == "Punto de Venta":
+        ventas.mostrar(rol)
+    elif seleccion == "Productos":
+        productos.mostrar(rol)
+    elif seleccion == "Proveedores":
+        proveedores.mostrar(rol)
+    elif seleccion == "Clientes":
+        clientes.mostrar(rol)
+    elif seleccion == "Compras":
+        compras.mostrar(rol)
+    elif seleccion == "Caja":
+        caja.mostrar(rol)
+    elif seleccion == "Usuarios":
+        usuarios.mostrar(rol)
+    elif seleccion == "Reportes":
+        reportes.mostrar(rol)
