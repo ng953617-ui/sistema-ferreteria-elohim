@@ -1,4 +1,5 @@
-streamlit
-mysql-connector-python
-bcrypt
-pandas
+streamlit==1.40.2
+mysql-connector-python==9.1.0
+pandas==2.2.3
+bcrypt==4.2.1
+openpyxl==3.1.5

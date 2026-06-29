@@ -1,0 +1,646 @@
+codigo_barra,nombre,categoria,ubicacion,precio_venta,unidad_medida,stock_actual,stock_minimo,tiene_codigo_barra
+,CEMENTO GRIS FORTALEZA TIPO GU 42.5 KG,Construcción,Área abierta / patio de materiales,8.7,Saco,35,10,0
+CEME-00001,CEMENTO PORTLAND FUERTE GRIS HOLCIM 42.5 KG,Construcción,Área abierta / patio de materiales,9.59,Saco,25,10,1
+VHCO-00002,HIERRO REDONDO CORRUGADO 3/8 PLG,Construcción,Área abierta / patio de materiales,3.5,Varilla,80,20,1
+VHL-00001,HIERRO REDONDO LISO 1/4 PLG,Construcción,Área abierta / patio de materiales,1.23,Varilla,100,30,1
+007810,LÁMINA DURAZINC C-26 5.00MT,Construcción,Área abierta / patio de materiales,24.75,Unidad,15,5,1
+070822,POLÍN C4 GALVANIZADO 1.50MM,Construcción,Área abierta / patio de materiales,19.0,Unidad,12,5,1
+TGAL-00031,TUBO GALVANIZADO CUADRADO 4PLGX1.50MM,Construcción,Área abierta / patio de materiales,39.75,Unidad,8,3,1
+,ARENA,Construcción,Área abierta / patio de materiales,22.0,Metro³,10,3,0
+,GRAVA,Construcción,Área abierta / patio de materiales,24.0,Metro³,9,3,0
+,BLOCK DE CONCRETO,Construcción,Área abierta / patio de materiales,0.65,Unidad,650,150,0
+,CUARTÓN DE MADERA,Carpintería,Área abierta / patio de materiales,5.5,Unidad,40,10,0
+,REGLA DE MADERA,Carpintería,Área abierta / patio de materiales,3.75,Unidad,55,15,0
+3600832,UNIÓN PVC LISA 1/2,Fontanería,Mostrador / sala de ventas,0.12,Unidad,200,50,1
+0409263,LLAVE CHORRO DE PALANCA 1/2 FOSSET,Fontanería,Mostrador / sala de ventas,2.62,Unidad,20,5,1
+2000831,LLAVE CHORRO PP 1/2,Fontanería,Mostrador / sala de ventas,7.02,Unidad,10,4,1
+1500295,PEGAMENTO PVC TANGIT TODA PRESIÓN 25 ML HENKEL,Fontanería,Mostrador / sala de ventas,2.25,Unidad,22,6,1
+080055,MASTER BOND #7045 PVC TUBO 25GR,Fontanería,Mostrador / sala de ventas,0.96,Unidad,30,8,1
+,TUBO PVC 1/2,Fontanería,Área abierta / patio de materiales,4.0,Unidad,45,12,0
+,CODO PVC 1/2,Fontanería,Mostrador / sala de ventas,0.35,Unidad,120,30,0
+1500279,CINTA TEFLÓN 1/2 X 10MTS,Fontanería,Mostrador / sala de ventas,0.14,Unidad,75,15,1
+,CABLE ELÉCTRICO 2X50,Electricidad,Mostrador / sala de ventas,2.0,Metro,100,20,0
+,TOMACORRIENTE,Electricidad,Mostrador / sala de ventas,1.75,Unidad,50,10,0
+,BOMBILLO LED,Electricidad,Mostrador / sala de ventas,1.5,Unidad,40,10,0
+,EXTENSIÓN ALARGADOR 2 HILOS,Electricidad,Mostrador / sala de ventas,4.0,Unidad,12,4,0
+,CINTA AISLANTE,Electricidad,Mostrador / sala de ventas,1.0,Unidad,35,8,0
+0700835,BROCHA DE CERDA PUNTA BLANCA 2 PULG #01 PERFECT,Pinturas,Mostrador / sala de ventas,0.6,Unidad,25,6,1
+0700837,BROCHA DE CERDA PUNTA BLANCA 3 PULG #01 PERFECT,Pinturas,Mostrador / sala de ventas,0.95,Unidad,30,6,1
+0700167,RODILLO JUMBO N°9 FELPA 15MM PERFECT,Pinturas,Mostrador / sala de ventas,1.98,Unidad,18,5,1
+0700904,BANDEJA CON RODILLO PERFECT,Pinturas,Mostrador / sala de ventas,2.3,Unidad,10,4,1
+,PINTURA GALÓN BLANCA,Pinturas,Bodega pequeña / interna,9.0,Galón,12,4,0
+CIT1028,PACHÓN CITGO 5W30 FULL SINTÉTICO,Automotriz,Mostrador / sala de ventas,30.0,Unidad,10,3,1
+MOT005,MOTUL 7100 10W40 4T,Automotriz,Mostrador / sala de ventas,14.75,Unidad,12,3,1
+MOT001,MOTUL 3000 20W50 4T,Automotriz,Mostrador / sala de ventas,6.25,Unidad,20,5,1
+VAL004,VALVOLINE 20W50,Automotriz,Mostrador / sala de ventas,5.75,Unidad,15,4,1
+PH3593A,FILTRO DE ACEITE PH3593A,Automotriz,Mostrador / sala de ventas,2.25,Unidad,25,8,1
+20000214,DISCO FLAP 4 1/2 TRUPER G60,Herramientas,Mostrador / sala de ventas,2.3,Unidad,30,8,1
+20000224,DISCO FLAP 4 1/2 G20 TRUPER,Herramientas,Mostrador / sala de ventas,2.3,Unidad,20,6,1
+0409046,DISCO METAL TRUPER 1/8,Herramientas,Mostrador / sala de ventas,1.3,Unidad,35,10,1
+20005024,DISCO METAL 4 1/2 X 1MM MEISSNER,Herramientas,Mostrador / sala de ventas,0.96,Unidad,45,12,1
+0603046,TORNILLO AUTORROSCANTE 2 X 1 C/EMP LÁMINA POLÍN,Herramientas,Mostrador / sala de ventas,25.0,Caja,5,2,1
+0600512,TORNILLO TABLA ROCA NEGRO 6X1 1/2,Carpintería,Mostrador / sala de ventas,0.95,Bolsa,35,10,1
+,CLAVO LISO,Carpintería,Mostrador / sala de ventas,2.0,Libra,75,20,0
+,LIJA PARA MADERA,Carpintería,Mostrador / sala de ventas,0.5,Unidad,80,20,0
+ELO010011,POLÍN GALVANIZADO 3/4 MM,Construcción,Área abierta / patio de materiales,17.03,Unidad,121.09,29.09,1
+ELO010012,POLÍN GALVANIZADO 2 MM,Construcción,Área abierta / patio de materiales,16.27,Unidad,81.39,9.83,1
+ELO010013,HIERRO CORRUGADO 10 PULG GRADO 40,Construcción,Área abierta / patio de materiales,5.79,Varilla,79.94,26.58,1
+,BLOQUE DE CONCRETO 14,Construcción,Área abierta / patio de materiales,0.93,Unidad,41.06,8.3,0
+ELO010015,POLÍN GALVANIZADO 25 MM,Construcción,Área abierta / patio de materiales,23.05,Unidad,88.61,26.81,1
+ELO010016,HIERRO CORRUGADO 3/4 PULG GRADO 40,Construcción,Área abierta / patio de materiales,6.52,Varilla,113.9,14.86,1
+,ARENA LAVADA POR 5/16,Construcción,Área abierta / patio de materiales,27.91,Metro³,12.67,1.79,0
+ELO010018,CEMENTO GRIS TIPO GU 40 KG,Construcción,Mostrador / sala de ventas,9.11,Saco,43.59,6.43,1
+ELO010019,LÁMINA GALVANIZADA CALIBRE 20,Construcción,Área abierta / patio de materiales,18.26,Unidad,16.0,4.84,1
+,GRAVA TRITURADA POR 25,Construcción,Área abierta / patio de materiales,24.14,Metro³,118.62,38.29,0
+ELO010021,LÁMINA GALVANIZADA CALIBRE 5/16,Construcción,Área abierta / patio de materiales,29.56,Unidad,140.7,26.1,1
+ELO010022,HIERRO CORRUGADO 1 1/2 PULG GRADO 40,Construcción,Área abierta / patio de materiales,7.08,Varilla,51.09,14.97,1
+,ARENA LAVADA POR 1/4,Construcción,Área abierta / patio de materiales,27.25,Metro³,21.7,3.64,0
+ELO010024,LÁMINA GALVANIZADA CALIBRE 1,Construcción,Área abierta / patio de materiales,26.39,Unidad,65.53,9.18,1
+,BLOQUE DE CONCRETO 14 REF 015,Construcción,Área abierta / patio de materiales,0.84,Unidad,10.85,2.2,0
+ELO010026,POLÍN GALVANIZADO 1 MM,Construcción,Área abierta / patio de materiales,25.43,Unidad,35.01,5.37,1
+ELO010027,POLÍN GALVANIZADO 20 MM,Construcción,Área abierta / patio de materiales,21.44,Unidad,145.3,20.67,1
+ELO010028,LÁMINA GALVANIZADA CALIBRE 40,Construcción,Área abierta / patio de materiales,27.02,Unidad,16.94,4.06,1
+ELO010029,CEMENTO GRIS TIPO GU 1 1/2 KG,Construcción,Mostrador / sala de ventas,9.56,Saco,49.43,13.76,1
+ELO010030,LÁMINA GALVANIZADA CALIBRE 30,Construcción,Área abierta / patio de materiales,32.29,Unidad,27.17,5.46,1
+,ARENA LAVADA POR 30,Construcción,Área abierta / patio de materiales,22.9,Metro³,40.88,7.33,0
+ELO010032,HIERRO CORRUGADO 14 PULG GRADO 40,Construcción,Área abierta / patio de materiales,5.58,Varilla,122.78,22.15,1
+,GRAVA TRITURADA POR 14,Construcción,Área abierta / patio de materiales,26.23,Metro³,142.57,19.02,0
+ELO010034,POLÍN GALVANIZADO 1/2 MM,Construcción,Área abierta / patio de materiales,21.78,Unidad,131.65,38.9,1
+,GRAVA TRITURADA POR 16,Construcción,Área abierta / patio de materiales,23.2,Metro³,57.07,9.12,0
+,GRAVA TRITURADA POR 1 1/2,Construcción,Área abierta / patio de materiales,28.88,Metro³,85.82,17.31,0
+,GRAVA TRITURADA POR 5/16,Construcción,Área abierta / patio de materiales,28.86,Metro³,68.93,9.26,0
+ELO010038,POLÍN GALVANIZADO 16 MM,Construcción,Área abierta / patio de materiales,17.89,Unidad,62.58,14.15,1
+,ARENA LAVADA POR 1 1/2,Construcción,Área abierta / patio de materiales,21.96,Metro³,100.94,23.7,0
+ELO010040,CEMENTO GRIS TIPO GU 3/4 KG,Construcción,Mostrador / sala de ventas,8.58,Saco,120.48,25.73,1
+,ARENA LAVADA POR 25,Construcción,Área abierta / patio de materiales,27.75,Metro³,20.55,6.62,0
+ELO010042,POLÍN GALVANIZADO 20 MM REF 032,Construcción,Área abierta / patio de materiales,18.87,Unidad,75.48,19.26,1
+,BLOQUE DE CONCRETO 1/4,Construcción,Área abierta / patio de materiales,0.8,Unidad,52.84,15.22,0
+,ARENA LAVADA POR 10,Construcción,Área abierta / patio de materiales,26.72,Metro³,85.87,22.36,0
+ELO010045,LÁMINA GALVANIZADA CALIBRE 1/4,Construcción,Área abierta / patio de materiales,24.88,Unidad,87.28,26.34,1
+ELO010046,LÁMINA GALVANIZADA CALIBRE 40 REF 036,Construcción,Área abierta / patio de materiales,30.78,Unidad,62.67,19.17,1
+,BLOQUE DE CONCRETO 1/4 REF 037,Construcción,Área abierta / patio de materiales,0.93,Unidad,140.11,27.53,0
+ELO010048,LÁMINA GALVANIZADA CALIBRE 1/4 REF 038,Construcción,Área abierta / patio de materiales,31.46,Unidad,142.79,45.25,1
+,GRAVA TRITURADA POR 50,Construcción,Área abierta / patio de materiales,26.86,Metro³,24.29,5.51,0
+,ARENA LAVADA POR 10 REF 040,Construcción,Área abierta / patio de materiales,20.82,Metro³,61.7,14.55,0
+,BLOQUE DE CONCRETO 2,Construcción,Área abierta / patio de materiales,0.77,Unidad,57.52,16.16,0
+ELO010052,POLÍN GALVANIZADO 1/2 MM REF 042,Construcción,Área abierta / patio de materiales,16.71,Unidad,107.65,14.85,1
+,GRAVA TRITURADA POR 14 REF 043,Construcción,Área abierta / patio de materiales,25.6,Metro³,16.71,2.57,0
+,BLOQUE DE CONCRETO 20,Construcción,Área abierta / patio de materiales,0.78,Unidad,149.79,18.79,0
+,GRAVA TRITURADA POR 50 REF 045,Construcción,Área abierta / patio de materiales,22.67,Metro³,53.31,16.35,0
+ELO010056,POLÍN GALVANIZADO 50 MM,Construcción,Área abierta / patio de materiales,21.99,Unidad,57.02,16.51,1
+,GRAVA TRITURADA POR 1 1/2 REF 047,Construcción,Área abierta / patio de materiales,29.54,Metro³,42.03,7.51,0
+,GRAVA TRITURADA POR 60,Construcción,Área abierta / patio de materiales,28.98,Metro³,89.36,18.2,0
+ELO010059,HIERRO CORRUGADO 1/4 PULG GRADO 40,Construcción,Área abierta / patio de materiales,3.2,Varilla,55.84,14.3,1
+ELO010060,POLÍN GALVANIZADO 60 MM,Construcción,Área abierta / patio de materiales,15.72,Unidad,35.22,6.36,1
+ELO010061,HIERRO CORRUGADO 30 PULG GRADO 40,Construcción,Área abierta / patio de materiales,2.66,Varilla,53.23,14.02,1
+ELO010062,POLÍN GALVANIZADO 30 MM,Construcción,Área abierta / patio de materiales,15.01,Unidad,34.84,7.8,1
+,GRAVA TRITURADA POR 10,Construcción,Área abierta / patio de materiales,24.74,Metro³,25.18,6.81,0
+,BLOQUE DE CONCRETO 50,Construcción,Área abierta / patio de materiales,0.69,Unidad,86.48,14.05,0
+ELO010065,CEMENTO GRIS TIPO GU 14 KG,Construcción,Mostrador / sala de ventas,10.83,Saco,133.72,39.6,1
+,ARENA LAVADA POR 30 REF 056,Construcción,Área abierta / patio de materiales,22.68,Metro³,119.95,25.51,0
+ELO010067,CEMENTO GRIS TIPO GU 30 KG,Construcción,Mostrador / sala de ventas,10.14,Saco,87.87,29.09,1
+ELO010068,HIERRO CORRUGADO 60 PULG GRADO 40,Construcción,Área abierta / patio de materiales,5.87,Varilla,62.1,11.45,1
+,GRAVA TRITURADA POR 12,Construcción,Área abierta / patio de materiales,29.14,Metro³,2.72,1,0
+ELO010070,POLÍN GALVANIZADO 25 MM REF 060,Construcción,Área abierta / patio de materiales,20.38,Unidad,19.88,5.43,1
+ELO010071,HIERRO CORRUGADO 60 PULG GRADO 40 REF 061,Construcción,Área abierta / patio de materiales,3.91,Varilla,122.05,35.71,1
+ELO010072,HIERRO CORRUGADO 3/8 PULG GRADO 40,Construcción,Área abierta / patio de materiales,4.51,Varilla,63.51,9.77,1
+ELO010073,CEMENTO GRIS TIPO GU 25 KG,Construcción,Mostrador / sala de ventas,10.68,Saco,36.83,7.91,1
+,BLOQUE DE CONCRETO 3/8,Construcción,Área abierta / patio de materiales,0.66,Unidad,42.57,7.21,0
+,ARENA LAVADA POR 60,Construcción,Área abierta / patio de materiales,21.18,Metro³,25.65,3.75,0
+ELO010076,POLÍN GALVANIZADO 1/4 MM,Construcción,Área abierta / patio de materiales,13.64,Unidad,66.21,9.1,1
+ELO010077,CEMENTO GRIS TIPO GU 20 KG,Construcción,Mostrador / sala de ventas,11.0,Saco,142.68,43.94,1
+ELO010078,POLÍN GALVANIZADO 60 MM REF 068,Construcción,Área abierta / patio de materiales,13.06,Unidad,127.32,27.06,1
+,ARENA LAVADA POR 16,Construcción,Área abierta / patio de materiales,24.36,Metro³,147.73,37.05,0
+,BLOQUE DE CONCRETO 1,Construcción,Área abierta / patio de materiales,0.75,Unidad,66.7,19.59,0
+ELO010081,LÁMINA GALVANIZADA CALIBRE 1/4 REF 071,Construcción,Área abierta / patio de materiales,34.16,Unidad,47.98,6.73,1
+,GRAVA TRITURADA POR 10 REF 072,Construcción,Área abierta / patio de materiales,24.04,Metro³,22.25,6.63,0
+,BLOQUE DE CONCRETO 30,Construcción,Área abierta / patio de materiales,0.71,Unidad,112.52,25.68,0
+ELO010084,LÁMINA GALVANIZADA CALIBRE 1 REF 074,Construcción,Área abierta / patio de materiales,26.93,Unidad,81.67,21.63,1
+,BLOQUE DE CONCRETO 10,Construcción,Área abierta / patio de materiales,0.91,Unidad,88.06,12.63,0
+ELO010086,POLÍN GALVANIZADO 5/16 MM,Construcción,Área abierta / patio de materiales,16.3,Unidad,63.99,18.9,1
+,GRAVA TRITURADA POR 5/16 REF 077,Construcción,Área abierta / patio de materiales,22.18,Metro³,75.66,15.96,0
+,GRAVA TRITURADA POR 20,Construcción,Área abierta / patio de materiales,24.67,Metro³,23.7,7.8,0
+,BLOQUE DE CONCRETO 10 REF 079,Construcción,Área abierta / patio de materiales,0.58,Unidad,2.32,1,0
+ELO010090,CEMENTO GRIS TIPO GU 50 KG,Construcción,Mostrador / sala de ventas,10.62,Saco,105.96,13.06,1
+ELO010091,LÁMINA GALVANIZADA CALIBRE 12,Construcción,Área abierta / patio de materiales,24.31,Unidad,12.38,3.32,1
+ELO010092,HIERRO CORRUGADO 3/8 PULG GRADO 40 REF 082,Construcción,Área abierta / patio de materiales,3.92,Varilla,61.16,11.66,1
+ELO010093,POLÍN GALVANIZADO 1/4 MM REF 083,Construcción,Área abierta / patio de materiales,14.03,Unidad,27.46,3.56,1
+,BLOQUE DE CONCRETO 25,Construcción,Área abierta / patio de materiales,0.63,Unidad,67.31,14.59,0
+,BLOQUE DE CONCRETO 16,Construcción,Área abierta / patio de materiales,0.67,Unidad,67.78,20.55,0
+,GRAVA TRITURADA POR 5/16 REF 086,Construcción,Área abierta / patio de materiales,24.33,Metro³,145.01,24.03,0
+ELO010097,LÁMINA GALVANIZADA CALIBRE 50,Construcción,Área abierta / patio de materiales,36.21,Unidad,62.2,11.51,1
+,BLOQUE DE CONCRETO 1 1/2,Construcción,Área abierta / patio de materiales,0.58,Unidad,148.06,38.02,0
+,ARENA LAVADA POR 25 REF 089,Construcción,Área abierta / patio de materiales,24.98,Metro³,70.44,14.82,0
+,BLOQUE DE CONCRETO 40,Construcción,Área abierta / patio de materiales,0.85,Unidad,6.76,1,0
+ELO010101,CEMENTO GRIS TIPO GU 60 KG,Construcción,Mostrador / sala de ventas,10.54,Saco,4.04,1,1
+,BLOQUE DE CONCRETO 40 REF 092,Construcción,Área abierta / patio de materiales,0.71,Unidad,94.74,29.81,0
+,ARENA LAVADA POR 5/16 REF 093,Construcción,Área abierta / patio de materiales,22.55,Metro³,33.71,5.08,0
+,BLOQUE DE CONCRETO 1/2,Construcción,Área abierta / patio de materiales,0.92,Unidad,30.95,3.89,0
+,BLOQUE DE CONCRETO 30 REF 095,Construcción,Área abierta / patio de materiales,0.65,Unidad,78.89,26.91,0
+ELO010106,POLÍN GALVANIZADO 5/16 MM REF 096,Construcción,Área abierta / patio de materiales,19.2,Unidad,145.98,22.24,1
+,GRAVA TRITURADA POR 14 REF 097,Construcción,Área abierta / patio de materiales,29.89,Metro³,75.76,21.12,0
+,ARENA LAVADA POR 16 REF 098,Construcción,Área abierta / patio de materiales,23.37,Metro³,11.95,2.29,0
+,ARENA LAVADA POR 2,Construcción,Área abierta / patio de materiales,23.64,Metro³,121.23,29.25,0
+ELO010110,CEMENTO GRIS TIPO GU 14 KG REF 100,Construcción,Mostrador / sala de ventas,11.15,Saco,114.62,36.33,1
+ELO010111,HIERRO CORRUGADO 50 PULG GRADO 40,Construcción,Área abierta / patio de materiales,4.04,Varilla,104.66,24.11,1
+,BLOQUE DE CONCRETO 2 REF 102,Construcción,Área abierta / patio de materiales,0.87,Unidad,147.53,20.55,0
+ELO010113,HIERRO CORRUGADO 5/16 PULG GRADO 40,Construcción,Área abierta / patio de materiales,7.08,Varilla,69.76,20.45,1
+ELO010114,POLÍN GALVANIZADO 60 MM REF 104,Construcción,Área abierta / patio de materiales,15.81,Unidad,54.66,16.06,1
+ELO010115,LÁMINA GALVANIZADA CALIBRE 50 REF 105,Construcción,Área abierta / patio de materiales,25.54,Unidad,60.61,7.92,1
+,ARENA LAVADA POR 3/8,Construcción,Área abierta / patio de materiales,23.08,Metro³,125.03,22.62,0
+ELO010117,LÁMINA GALVANIZADA CALIBRE 60,Construcción,Área abierta / patio de materiales,20.55,Unidad,54.56,10.95,1
+,BLOQUE DE CONCRETO 1 1/2 REF 108,Construcción,Área abierta / patio de materiales,0.73,Unidad,6.05,1,0
+,BLOQUE DE CONCRETO 30 REF 109,Construcción,Área abierta / patio de materiales,0.59,Unidad,124.77,24.08,0
+,GRAVA TRITURADA POR 2,Construcción,Área abierta / patio de materiales,24.9,Metro³,41.64,8.12,0
+,ARENA LAVADA POR 3/8 REF 111,Construcción,Área abierta / patio de materiales,27.41,Metro³,99.97,27.36,0
+ELO010122,POLÍN GALVANIZADO 30 MM REF 112,Construcción,Área abierta / patio de materiales,12.28,Unidad,106.25,15.27,1
+,ARENA LAVADA POR 40,Construcción,Área abierta / patio de materiales,25.27,Metro³,105.77,31.65,0
+ELO010124,HIERRO CORRUGADO 40 PULG GRADO 40,Construcción,Área abierta / patio de materiales,5.77,Varilla,65.96,10.59,1
+ELO010125,POLÍN GALVANIZADO 3/4 MM REF 115,Construcción,Área abierta / patio de materiales,17.51,Unidad,29.52,8.69,1
+,ARENA LAVADA POR 1,Construcción,Área abierta / patio de materiales,22.22,Metro³,4.59,1,0
+,GRAVA TRITURADA POR 60 REF 117,Construcción,Área abierta / patio de materiales,23.49,Metro³,136.28,26.93,0
+ELO010128,LÁMINA GALVANIZADA CALIBRE 10,Construcción,Área abierta / patio de materiales,35.44,Unidad,106.95,21.63,1
+ELO010129,CEMENTO GRIS TIPO GU 25 KG REF 119,Construcción,Mostrador / sala de ventas,10.94,Saco,123.95,16.41,1
+,GRAVA TRITURADA POR 40,Construcción,Área abierta / patio de materiales,27.42,Metro³,144.3,34.61,0
+,BLOQUE DE CONCRETO 3/4,Construcción,Área abierta / patio de materiales,0.73,Unidad,128.66,40.56,0
+ELO010132,LÁMINA GALVANIZADA CALIBRE 1/2,Construcción,Área abierta / patio de materiales,24.02,Unidad,53.14,15.59,1
+,ARENA LAVADA POR 25 REF 123,Construcción,Área abierta / patio de materiales,21.92,Metro³,106.0,28.8,0
+ELO010134,CEMENTO GRIS TIPO GU 16 KG,Construcción,Mostrador / sala de ventas,10.54,Saco,24.66,8.31,1
+ELO010135,CEMENTO GRIS TIPO GU 40 KG REF 125,Construcción,Mostrador / sala de ventas,10.26,Saco,104.65,29.9,1
+,ARENA LAVADA POR 30 REF 126,Construcción,Área abierta / patio de materiales,24.8,Metro³,40.16,10.6,0
+ELO010137,LÁMINA GALVANIZADA CALIBRE 2,Construcción,Área abierta / patio de materiales,27.9,Unidad,38.93,9.47,1
+ELO010138,HIERRO CORRUGADO 40 PULG GRADO 40 REF 128,Construcción,Área abierta / patio de materiales,3.27,Varilla,29.77,6.01,1
+ELO010139,POLÍN GALVANIZADO 60 MM REF 129,Construcción,Área abierta / patio de materiales,14.18,Unidad,33.76,6.89,1
+,ARENA LAVADA POR 3/4,Construcción,Área abierta / patio de materiales,26.53,Metro³,29.56,8.11,0
+ELO010141,POLÍN GALVANIZADO 3/8 MM,Construcción,Área abierta / patio de materiales,13.02,Unidad,30.22,4.4,1
+,BLOQUE DE CONCRETO 3/4 REF 132,Construcción,Área abierta / patio de materiales,0.56,Unidad,72.51,25.18,0
+ELO010143,POLÍN GALVANIZADO 50 MM REF 133,Construcción,Área abierta / patio de materiales,23.05,Unidad,12.97,3.83,1
+ELO010144,LÁMINA GALVANIZADA CALIBRE 1/2 REF 134,Construcción,Área abierta / patio de materiales,22.67,Unidad,79.12,16.86,1
+,BLOQUE DE CONCRETO 2 REF 135,Construcción,Área abierta / patio de materiales,0.91,Unidad,95.42,32.13,0
+ELO010146,CEMENTO GRIS TIPO GU 30 KG REF 136,Construcción,Mostrador / sala de ventas,10.55,Saco,71.5,12.48,1
+ELO010147,HIERRO CORRUGADO 5/16 PULG GRADO 40 REF 137,Construcción,Área abierta / patio de materiales,3.46,Varilla,23.98,4.73,1
+ELO010148,LÁMINA GALVANIZADA CALIBRE 14,Construcción,Área abierta / patio de materiales,24.76,Unidad,113.63,18.56,1
+,GRAVA TRITURADA POR 2 REF 139,Construcción,Área abierta / patio de materiales,28.65,Metro³,140.2,38.3,0
+ELO010150,HIERRO CORRUGADO 3/4 PULG GRADO 40 REF 140,Construcción,Área abierta / patio de materiales,5.99,Varilla,116.55,40.49,1
+ELO010151,HIERRO CORRUGADO 40 PULG GRADO 40 REF 141,Construcción,Área abierta / patio de materiales,7.46,Varilla,50.65,7.18,1
+,BLOQUE DE CONCRETO 16 REF 142,Construcción,Área abierta / patio de materiales,0.86,Unidad,90.92,15.07,0
+,BLOQUE DE CONCRETO 25 REF 143,Construcción,Área abierta / patio de materiales,0.74,Unidad,21.77,4.11,0
+ELO010154,CEMENTO GRIS TIPO GU 30 KG REF 144,Construcción,Mostrador / sala de ventas,11.02,Saco,94.55,18.15,1
+ELO010155,LÁMINA GALVANIZADA CALIBRE 2 REF 145,Construcción,Área abierta / patio de materiales,21.23,Unidad,122.85,21.96,1
+,ARENA LAVADA POR 1/2,Construcción,Área abierta / patio de materiales,26.67,Metro³,50.6,12.34,0
+ELO010157,LÁMINA GALVANIZADA CALIBRE 1/4 REF 147,Construcción,Área abierta / patio de materiales,27.31,Unidad,148.33,21.92,1
+ELO010158,POLÍN GALVANIZADO 60 MM REF 148,Construcción,Área abierta / patio de materiales,22.63,Unidad,38.33,6.11,1
+,BLOQUE DE CONCRETO 3/4 REF 149,Construcción,Área abierta / patio de materiales,0.66,Unidad,120.98,31.3,0
+ELO010160,LÁMINA GALVANIZADA CALIBRE 30 REF 150,Construcción,Área abierta / patio de materiales,26.34,Unidad,117.17,14.38,1
+ELO010161,CEMENTO GRIS TIPO GU 1 KG,Construcción,Mostrador / sala de ventas,9.97,Saco,100.65,24.53,1
+,GRAVA TRITURADA POR 50 REF 152,Construcción,Área abierta / patio de materiales,25.02,Metro³,101.55,22.62,0
+ELO010163,POLÍN GALVANIZADO 3/4 MM REF 153,Construcción,Área abierta / patio de materiales,15.02,Unidad,145.43,28.39,1
+ELO010164,HIERRO CORRUGADO 1 PULG GRADO 40,Construcción,Área abierta / patio de materiales,7.75,Varilla,124.59,28.46,1
+,GRAVA TRITURADA POR 10 REF 155,Construcción,Área abierta / patio de materiales,29.93,Metro³,93.56,13.06,0
+ELO010166,CEMENTO GRIS TIPO GU 16 KG REF 156,Construcción,Mostrador / sala de ventas,10.84,Saco,93.36,20.54,1
+ELO010167,LÁMINA GALVANIZADA CALIBRE 16,Construcción,Área abierta / patio de materiales,23.7,Unidad,141.26,35.6,1
+ELO010168,HIERRO CORRUGADO 3/4 PULG GRADO 40 REF 158,Construcción,Área abierta / patio de materiales,4.51,Varilla,68.76,23.33,1
+,GRAVA TRITURADA POR 10 REF 159,Construcción,Área abierta / patio de materiales,24.91,Metro³,79.68,16.17,0
+,ARENA LAVADA POR 1/4 REF 160,Construcción,Área abierta / patio de materiales,21.79,Metro³,32.14,4.96,0
+ELO010171,LÁMINA GALVANIZADA CALIBRE 10 REF 161,Construcción,Área abierta / patio de materiales,18.56,Unidad,114.58,30.24,1
+,GRAVA TRITURADA POR 1/2,Construcción,Área abierta / patio de materiales,26.6,Metro³,90.81,29.13,0
+ELO010173,CEMENTO GRIS TIPO GU 3/4 KG REF 163,Construcción,Mostrador / sala de ventas,10.38,Saco,69.8,21.0,1
+,ARENA LAVADA POR 20,Construcción,Área abierta / patio de materiales,27.87,Metro³,30.1,8.61,0
+ELO010175,CEMENTO GRIS TIPO GU 60 KG REF 165,Construcción,Mostrador / sala de ventas,9.22,Saco,136.03,21.93,1
+ELO010176,CEMENTO GRIS TIPO GU 25 KG REF 166,Construcción,Mostrador / sala de ventas,11.38,Saco,47.51,14.45,1
+ELO010177,CEMENTO GRIS TIPO GU 25 KG REF 167,Construcción,Mostrador / sala de ventas,11.48,Saco,89.68,27.51,1
+ELO010178,HIERRO CORRUGADO 2 PULG GRADO 40,Construcción,Área abierta / patio de materiales,4.83,Varilla,40.09,7.12,1
+,GRAVA TRITURADA POR 3/4,Construcción,Área abierta / patio de materiales,26.84,Metro³,63.63,11.97,0
+,ARENA LAVADA POR 1 REF 170,Construcción,Área abierta / patio de materiales,25.96,Metro³,21.94,4.4,0
+ELO010181,HIERRO CORRUGADO 3/4 PULG GRADO 40 REF 171,Construcción,Área abierta / patio de materiales,6.9,Varilla,111.26,32.48,1
+ELO010182,CEMENTO GRIS TIPO GU 3/8 KG,Construcción,Mostrador / sala de ventas,8.89,Saco,64.94,8.86,1
+,GRAVA TRITURADA POR 1,Construcción,Área abierta / patio de materiales,24.17,Metro³,56.18,10.44,0
+,ARENA LAVADA POR 1/2 REF 174,Construcción,Área abierta / patio de materiales,20.63,Metro³,92.58,13.06,0
+ELO010185,CEMENTO GRIS TIPO GU 14 KG REF 175,Construcción,Mostrador / sala de ventas,10.16,Saco,124.52,29.08,1
+ELO010186,LÁMINA GALVANIZADA CALIBRE 1 REF 176,Construcción,Área abierta / patio de materiales,21.18,Unidad,105.9,21.44,1
+ELO010187,LÁMINA GALVANIZADA CALIBRE 40 REF 177,Construcción,Área abierta / patio de materiales,33.96,Unidad,52.26,17.1,1
+ELO010188,CEMENTO GRIS TIPO GU 3/4 KG REF 178,Construcción,Mostrador / sala de ventas,9.93,Saco,63.13,10.28,1
+ELO010189,CEMENTO GRIS TIPO GU 3/8 KG REF 179,Construcción,Mostrador / sala de ventas,9.23,Saco,86.57,12.49,1
+,BLOQUE DE CONCRETO 60,Construcción,Área abierta / patio de materiales,0.62,Unidad,132.94,32.48,0
+ELO010191,HIERRO CORRUGADO 3/8 PULG GRADO 40 REF 181,Construcción,Área abierta / patio de materiales,6.19,Varilla,122.89,15.9,1
+,ARENA LAVADA POR 1 REF 182,Construcción,Área abierta / patio de materiales,23.32,Metro³,93.41,23.48,0
+,BLOQUE DE CONCRETO 1/2 REF 183,Construcción,Área abierta / patio de materiales,0.63,Unidad,94.81,16.73,0
+,GRAVA TRITURADA POR 16 REF 184,Construcción,Área abierta / patio de materiales,24.78,Metro³,98.13,28.14,0
+ELO010195,CEMENTO GRIS TIPO GU 60 KG REF 185,Construcción,Mostrador / sala de ventas,10.6,Saco,117.23,16.87,1
+,BLOQUE DE CONCRETO 10 REF 186,Construcción,Área abierta / patio de materiales,0.83,Unidad,69.38,12.12,0
+ELO010197,CEMENTO GRIS TIPO GU 3/8 KG REF 187,Construcción,Mostrador / sala de ventas,11.07,Saco,99.18,22.05,1
+ELO010198,HIERRO CORRUGADO 5/16 PULG GRADO 40 REF 188,Construcción,Área abierta / patio de materiales,2.56,Varilla,113.08,31.35,1
+,GRAVA TRITURADA POR 5/16 REF 189,Construcción,Área abierta / patio de materiales,29.91,Metro³,9.69,2.55,0
+,BLOQUE DE CONCRETO 40 REF 190,Construcción,Área abierta / patio de materiales,0.65,Unidad,141.29,38.98,0
+,ARENA LAVADA POR 2 REF 191,Construcción,Área abierta / patio de materiales,25.6,Metro³,76.13,12.03,0
+,GRAVA TRITURADA POR 10 REF 192,Construcción,Área abierta / patio de materiales,28.01,Metro³,41.92,14.65,0
+ELO010203,CEMENTO GRIS TIPO GU 50 KG REF 193,Construcción,Mostrador / sala de ventas,11.15,Saco,113.55,33.39,1
+ELO010204,HIERRO CORRUGADO 1 PULG GRADO 40 REF 194,Construcción,Área abierta / patio de materiales,5.97,Varilla,142.78,47.45,1
+,BLOQUE DE CONCRETO 14 REF 195,Construcción,Área abierta / patio de materiales,0.64,Unidad,97.95,19.9,0
+ELO010206,POLÍN GALVANIZADO 2 MM REF 196,Construcción,Área abierta / patio de materiales,25.39,Unidad,29.93,10.29,1
+,BLOQUE DE CONCRETO 20 REF 197,Construcción,Área abierta / patio de materiales,0.92,Unidad,141.64,18.48,0
+,GRAVA TRITURADA POR 2 REF 198,Construcción,Área abierta / patio de materiales,25.63,Metro³,46.05,11.64,0
+ELO010209,POLÍN GALVANIZADO 12 MM,Construcción,Área abierta / patio de materiales,16.66,Unidad,45.71,12.29,1
+,ARENA LAVADA POR 1/2 REF 200,Construcción,Área abierta / patio de materiales,27.42,Metro³,117.89,38.35,0
+ELO010211,POLÍN GALVANIZADO 10 MM,Construcción,Área abierta / patio de materiales,18.39,Unidad,53.7,10.35,1
+,GRAVA TRITURADA POR 3/8,Construcción,Área abierta / patio de materiales,23.25,Metro³,144.77,46.0,0
+,BLOQUE DE CONCRETO 3/8 REF 203,Construcción,Área abierta / patio de materiales,0.72,Unidad,54.76,8.9,0
+,BLOQUE DE CONCRETO 10 REF 204,Construcción,Área abierta / patio de materiales,0.93,Unidad,90.75,23.45,0
+ELO010215,POLÍN GALVANIZADO 20 MM REF 205,Construcción,Área abierta / patio de materiales,16.52,Unidad,28.13,6.83,1
+ELO010216,CEMENTO GRIS TIPO GU 30 KG REF 206,Construcción,Mostrador / sala de ventas,8.74,Saco,123.73,19.09,1
+ELO010217,LÁMINA GALVANIZADA CALIBRE 25,Construcción,Área abierta / patio de materiales,28.11,Unidad,98.34,27.97,1
+,GRAVA TRITURADA POR 3/8 REF 208,Construcción,Área abierta / patio de materiales,29.94,Metro³,140.88,24.77,0
+,ARENA LAVADA POR 1/2 REF 209,Construcción,Área abierta / patio de materiales,24.76,Metro³,46.23,10.1,0
+ELO010220,HIERRO CORRUGADO 3/4 PULG GRADO 40 REF 210,Construcción,Área abierta / patio de materiales,2.55,Varilla,50.71,11.52,1
+,BLOQUE DE CONCRETO 16 REF 211,Construcción,Área abierta / patio de materiales,0.9,Unidad,41.16,10.8,0
+,BLOQUE DE CONCRETO 1 REF 212,Construcción,Área abierta / patio de materiales,0.62,Unidad,23.21,7.09,0
+,ARENA LAVADA POR 3/4 REF 213,Construcción,Área abierta / patio de materiales,21.53,Metro³,146.25,36.43,0
+,GRAVA TRITURADA POR 40 REF 214,Construcción,Área abierta / patio de materiales,26.4,Metro³,109.96,21.36,0
+ELO010225,HIERRO CORRUGADO 3/4 PULG GRADO 40 REF 215,Construcción,Área abierta / patio de materiales,4.6,Varilla,87.8,29.21,1
+,ARENA LAVADA POR 25 REF 216,Construcción,Área abierta / patio de materiales,26.95,Metro³,118.84,14.83,0
+,GRAVA TRITURADA POR 14 REF 217,Construcción,Área abierta / patio de materiales,25.92,Metro³,51.69,13.38,0
+ELO010228,HIERRO CORRUGADO 5/16 PULG GRADO 40 REF 218,Construcción,Área abierta / patio de materiales,2.66,Varilla,90.7,15.02,1
+,ARENA LAVADA POR 30 REF 219,Construcción,Área abierta / patio de materiales,25.14,Metro³,80.55,10.1,0
+ELO010230,POLÍN GALVANIZADO 2 MM REF 220,Construcción,Área abierta / patio de materiales,13.85,Unidad,2.61,1,1
+,BLOQUE DE CONCRETO 25 REF 221,Construcción,Área abierta / patio de materiales,0.89,Unidad,95.23,23.6,0
+,BLOQUE DE CONCRETO 50 REF 222,Construcción,Área abierta / patio de materiales,0.6,Unidad,71.4,10.02,0
+ELO010233,CEMENTO GRIS TIPO GU 20 KG REF 223,Construcción,Mostrador / sala de ventas,10.67,Saco,132.74,44.05,1
+ELO010234,LÁMINA GALVANIZADA CALIBRE 12 REF 224,Construcción,Área abierta / patio de materiales,35.76,Unidad,93.94,23.43,1
+ELO010235,CEMENTO GRIS TIPO GU 3/8 KG REF 225,Construcción,Mostrador / sala de ventas,10.37,Saco,58.01,13.6,1
+ELO010236,CEMENTO GRIS TIPO GU 50 KG REF 226,Construcción,Mostrador / sala de ventas,11.45,Saco,112.19,14.15,1
+,ARENA LAVADA POR 60 REF 227,Construcción,Área abierta / patio de materiales,25.21,Metro³,23.49,5.8,0
+ELO010238,LÁMINA GALVANIZADA CALIBRE 10 REF 228,Construcción,Área abierta / patio de materiales,17.83,Unidad,149.84,32.4,1
+,BLOQUE DE CONCRETO 1 1/2 REF 229,Construcción,Área abierta / patio de materiales,0.88,Unidad,136.89,44.59,0
+ELO010240,POLÍN GALVANIZADO 1/2 MM REF 230,Construcción,Área abierta / patio de materiales,16.02,Unidad,67.82,23.52,1
+,ARENA LAVADA POR 16 REF 231,Construcción,Área abierta / patio de materiales,24.85,Metro³,129.74,20.76,0
+ELO010242,HIERRO CORRUGADO 14 PULG GRADO 40 REF 232,Construcción,Área abierta / patio de materiales,4.72,Varilla,92.12,12.08,1
+,BLOQUE DE CONCRETO 1/4 REF 233,Construcción,Área abierta / patio de materiales,0.73,Unidad,119.59,32.91,0
+ELO010244,POLÍN GALVANIZADO 3/4 MM REF 234,Construcción,Área abierta / patio de materiales,15.72,Unidad,4.21,1.1,1
+,BLOQUE DE CONCRETO 14 REF 235,Construcción,Área abierta / patio de materiales,0.86,Unidad,42.99,13.47,0
+,ARENA LAVADA POR 5/16 REF 236,Construcción,Área abierta / patio de materiales,23.57,Metro³,68.73,9.97,0
+ELO010247,CEMENTO GRIS TIPO GU 20 KG REF 237,Construcción,Mostrador / sala de ventas,10.47,Saco,49.7,13.92,1
+ELO010248,POLÍN GALVANIZADO 10 MM REF 238,Construcción,Área abierta / patio de materiales,23.27,Unidad,80.58,12.91,1
+,ARENA LAVADA POR 1/2 REF 239,Construcción,Área abierta / patio de materiales,23.04,Metro³,73.34,21.76,0
+ELO010250,HIERRO CORRUGADO 5/16 PULG GRADO 40 REF 240,Construcción,Área abierta / patio de materiales,2.67,Varilla,47.31,9.87,1
+ELO010251,HIERRO CORRUGADO 2 PULG GRADO 40 REF 241,Construcción,Área abierta / patio de materiales,6.14,Varilla,63.18,22.09,1
+ELO010252,HIERRO CORRUGADO 40 PULG GRADO 40 REF 242,Construcción,Área abierta / patio de materiales,5.38,Varilla,53.55,18.38,1
+,BLOQUE DE CONCRETO 3/4 REF 243,Construcción,Área abierta / patio de materiales,0.77,Unidad,134.61,31.17,0
+ELO010254,CEMENTO GRIS TIPO GU 30 KG REF 244,Construcción,Mostrador / sala de ventas,11.08,Saco,14.14,2.39,1
+ELO010255,POLÍN GALVANIZADO 20 MM REF 245,Construcción,Área abierta / patio de materiales,21.22,Unidad,149.24,45.74,1
+ELO010256,HIERRO CORRUGADO 60 PULG GRADO 40 REF 246,Construcción,Área abierta / patio de materiales,2.6,Varilla,90.61,11.88,1
+ELO010257,LÁMINA GALVANIZADA CALIBRE 14 REF 247,Construcción,Área abierta / patio de materiales,32.14,Unidad,104.48,23.0,1
+,ARENA LAVADA POR 1 REF 248,Construcción,Área abierta / patio de materiales,20.98,Metro³,62.59,17.87,0
+ELO010259,LÁMINA GALVANIZADA CALIBRE 1/2 REF 249,Construcción,Área abierta / patio de materiales,26.45,Unidad,59.21,12.76,1
+,BLOQUE DE CONCRETO 5/16,Construcción,Área abierta / patio de materiales,0.67,Unidad,128.35,26.22,0
+ELO020009,TEE PVC 3/4,Fontanería,Bodega pequeña / interna,1.42,Unidad,98.56,19.58,1
+ELO020010,MANGUERA PLÁSTICA 1 1/2,Fontanería,Bodega pequeña / interna,0.94,Metro,105.46,19.67,1
+ELO020011,UNIÓN PVC LISA 3/8,Fontanería,Bodega pequeña / interna,0.27,Unidad,10.46,2.89,1
+ELO020012,LLAVE DE CHORRO 14,Fontanería,Bodega pequeña / interna,2.45,Unidad,146.82,49.31,1
+ELO020013,MANGUERA PLÁSTICA 3/8,Fontanería,Bodega pequeña / interna,0.86,Metro,141.79,26.9,1
+ELO020014,LLAVE DE CHORRO 25,Fontanería,Bodega pequeña / interna,7.35,Unidad,77.56,22.6,1
+ELO020015,MANGUERA PLÁSTICA 2,Fontanería,Bodega pequeña / interna,2.42,Metro,110.89,19.15,1
+ELO020016,MANGUERA PLÁSTICA 16,Fontanería,Bodega pequeña / interna,1.65,Metro,97.37,17.08,1
+ELO020017,TEE PVC 20,Fontanería,Bodega pequeña / interna,1.53,Unidad,60.12,8.78,1
+ELO020018,LLAVE DE CHORRO 1/4,Fontanería,Bodega pequeña / interna,6.12,Unidad,25.48,8.12,1
+ELO020019,CODO PVC 12,Fontanería,Bodega pequeña / interna,0.27,Unidad,79.65,24.83,1
+ELO020020,TEE PVC 5/16,Fontanería,Bodega pequeña / interna,1.55,Unidad,127.32,28.83,1
+ELO020021,TEE PVC 60,Fontanería,Bodega pequeña / interna,0.62,Unidad,98.73,18.22,1
+ELO020022,CODO PVC 12 REF 014,Fontanería,Bodega pequeña / interna,0.65,Unidad,126.7,28.75,1
+ELO020023,MANGUERA PLÁSTICA 16 REF 015,Fontanería,Bodega pequeña / interna,2.1,Metro,40.79,6.53,1
+ELO020024,LLAVE DE CHORRO 1/2,Fontanería,Bodega pequeña / interna,8.37,Unidad,10.89,1.59,1
+ELO020025,TEE PVC 10,Fontanería,Bodega pequeña / interna,0.9,Unidad,138.61,47.64,1
+ELO020026,MANGUERA PLÁSTICA 1 1/2 REF 018,Fontanería,Bodega pequeña / interna,2.08,Metro,39.53,8.34,1
+ELO020027,LLAVE DE CHORRO 16,Fontanería,Bodega pequeña / interna,4.64,Unidad,54.16,7.91,1
+ELO020028,CODO PVC 1,Fontanería,Bodega pequeña / interna,1.6,Unidad,71.93,10.14,1
+ELO020029,TEE PVC 20 REF 021,Fontanería,Bodega pequeña / interna,1.05,Unidad,37.11,11.72,1
+ELO020030,UNIÓN PVC LISA 1/4,Fontanería,Bodega pequeña / interna,1.39,Unidad,109.0,25.51,1
+ELO020031,TEE PVC 50,Fontanería,Bodega pequeña / interna,1.2,Unidad,61.37,20.44,1
+ELO020032,LLAVE DE CHORRO 12,Fontanería,Bodega pequeña / interna,5.9,Unidad,47.45,10.66,1
+ELO020033,MANGUERA PLÁSTICA 2 REF 025,Fontanería,Bodega pequeña / interna,0.83,Metro,27.04,5.45,1
+ELO020034,UNIÓN PVC LISA 40,Fontanería,Bodega pequeña / interna,1.42,Unidad,105.01,14.39,1
+ELO020035,MANGUERA PLÁSTICA 2 REF 027,Fontanería,Bodega pequeña / interna,1.71,Metro,20.77,2.95,1
+ELO020036,CODO PVC 10,Fontanería,Bodega pequeña / interna,0.77,Unidad,16.27,2.27,1
+ELO020037,TEE PVC 1,Fontanería,Bodega pequeña / interna,0.91,Unidad,31.24,4.15,1
+ELO020038,LLAVE DE CHORRO 50,Fontanería,Bodega pequeña / interna,3.46,Unidad,33.68,5.8,1
+ELO020039,TUBO PVC PRESIÓN 3/8,Fontanería,Bodega pequeña / interna,6.14,Unidad,68.24,18.98,1
+ELO020040,MANGUERA PLÁSTICA 5/16,Fontanería,Bodega pequeña / interna,1.44,Metro,118.72,31.69,1
+ELO020041,UNIÓN PVC LISA 1 1/2,Fontanería,Bodega pequeña / interna,0.63,Unidad,86.18,13.92,1
+ELO020042,TEE PVC 2,Fontanería,Bodega pequeña / interna,1.23,Unidad,51.56,14.58,1
+ELO020043,CODO PVC 5/16,Fontanería,Bodega pequeña / interna,0.79,Unidad,136.92,36.1,1
+ELO020044,TUBO PVC PRESIÓN 60,Fontanería,Bodega pequeña / interna,7.18,Unidad,114.6,29.96,1
+ELO020045,MANGUERA PLÁSTICA 1,Fontanería,Bodega pequeña / interna,2.49,Metro,71.95,17.98,1
+ELO020046,LLAVE DE CHORRO 40,Fontanería,Bodega pequeña / interna,7.21,Unidad,35.07,11.78,1
+ELO020047,LLAVE DE CHORRO 14 REF 039,Fontanería,Bodega pequeña / interna,7.06,Unidad,89.27,21.51,1
+ELO020048,CODO PVC 60,Fontanería,Bodega pequeña / interna,0.68,Unidad,91.14,17.25,1
+ELO020049,CODO PVC 5/16 REF 041,Fontanería,Bodega pequeña / interna,0.74,Unidad,60.0,15.14,1
+ELO020050,MANGUERA PLÁSTICA 2 REF 042,Fontanería,Bodega pequeña / interna,1.83,Metro,50.92,16.2,1
+ELO020051,TUBO PVC PRESIÓN 5/16,Fontanería,Bodega pequeña / interna,6.4,Unidad,91.34,23.17,1
+ELO020052,TUBO PVC PRESIÓN 30,Fontanería,Bodega pequeña / interna,7.71,Unidad,6.08,1.8,1
+ELO020053,TUBO PVC PRESIÓN 16,Fontanería,Bodega pequeña / interna,9.07,Unidad,37.66,6.01,1
+ELO020054,UNIÓN PVC LISA 16,Fontanería,Bodega pequeña / interna,1.03,Unidad,67.91,16.76,1
+ELO020055,MANGUERA PLÁSTICA 3/8 REF 047,Fontanería,Bodega pequeña / interna,2.2,Metro,107.62,37.28,1
+ELO020056,MANGUERA PLÁSTICA 10,Fontanería,Bodega pequeña / interna,1.57,Metro,112.07,13.87,1
+ELO020057,UNIÓN PVC LISA 1/4 REF 049,Fontanería,Bodega pequeña / interna,0.97,Unidad,107.11,31.32,1
+ELO020058,LLAVE DE CHORRO 50 REF 050,Fontanería,Bodega pequeña / interna,5.57,Unidad,41.46,12.06,1
+ELO020059,TEE PVC 14,Fontanería,Bodega pequeña / interna,1.54,Unidad,31.0,4.74,1
+ELO020060,MANGUERA PLÁSTICA 40,Fontanería,Bodega pequeña / interna,0.89,Metro,71.77,21.05,1
+ELO020061,CODO PVC 10 REF 053,Fontanería,Bodega pequeña / interna,1.7,Unidad,19.66,5.58,1
+ELO020062,MANGUERA PLÁSTICA 20,Fontanería,Bodega pequeña / interna,1.56,Metro,52.13,13.68,1
+ELO020063,TEE PVC 10 REF 055,Fontanería,Bodega pequeña / interna,1.79,Unidad,140.88,38.71,1
+ELO020064,TUBO PVC PRESIÓN 12,Fontanería,Bodega pequeña / interna,4.9,Unidad,18.6,5.84,1
+ELO020065,TEE PVC 40,Fontanería,Bodega pequeña / interna,1.84,Unidad,117.95,28.03,1
+ELO020066,TUBO PVC PRESIÓN 1,Fontanería,Bodega pequeña / interna,10.19,Unidad,49.95,7.25,1
+ELO020067,TEE PVC 50 REF 059,Fontanería,Bodega pequeña / interna,1.25,Unidad,3.1,1,1
+ELO020068,TEE PVC 16,Fontanería,Bodega pequeña / interna,0.96,Unidad,63.69,10.4,1
+ELO020069,LLAVE DE CHORRO 1/4 REF 061,Fontanería,Bodega pequeña / interna,4.08,Unidad,55.68,19.28,1
+ELO020070,LLAVE DE CHORRO 25 REF 062,Fontanería,Bodega pequeña / interna,5.24,Unidad,127.17,34.15,1
+ELO020071,CODO PVC 2,Fontanería,Bodega pequeña / interna,0.72,Unidad,42.42,13.78,1
+ELO020072,UNIÓN PVC LISA 10,Fontanería,Bodega pequeña / interna,1.16,Unidad,90.7,24.28,1
+ELO020073,UNIÓN PVC LISA 3/8 REF 065,Fontanería,Bodega pequeña / interna,0.83,Unidad,145.42,34.97,1
+ELO020074,TUBO PVC PRESIÓN 12 REF 066,Fontanería,Bodega pequeña / interna,5.69,Unidad,54.15,10.47,1
+ELO020075,CODO PVC 60 REF 067,Fontanería,Bodega pequeña / interna,0.7,Unidad,56.13,12.62,1
+ELO020076,UNIÓN PVC LISA 50,Fontanería,Bodega pequeña / interna,1.34,Unidad,13.97,4.15,1
+ELO020077,TUBO PVC PRESIÓN 12 REF 069,Fontanería,Bodega pequeña / interna,8.09,Unidad,146.29,22.83,1
+ELO020078,UNIÓN PVC LISA 30,Fontanería,Bodega pequeña / interna,0.94,Unidad,77.02,26.69,1
+ELO020079,CODO PVC 10 REF 071,Fontanería,Bodega pequeña / interna,1.23,Unidad,113.37,26.5,1
+ELO020080,TUBO PVC PRESIÓN 16 REF 072,Fontanería,Bodega pequeña / interna,7.79,Unidad,80.36,27.05,1
+ELO020081,CODO PVC 2 REF 073,Fontanería,Bodega pequeña / interna,0.73,Unidad,58.86,17.6,1
+ELO020082,TUBO PVC PRESIÓN 10,Fontanería,Bodega pequeña / interna,5.35,Unidad,106.99,20.82,1
+ELO020083,LLAVE DE CHORRO 3/4,Fontanería,Bodega pequeña / interna,7.05,Unidad,67.66,12.76,1
+ELO020084,TUBO PVC PRESIÓN 60 REF 076,Fontanería,Bodega pequeña / interna,5.97,Unidad,73.77,16.79,1
+ELO020085,UNIÓN PVC LISA 14,Fontanería,Bodega pequeña / interna,0.24,Unidad,64.15,12.32,1
+ELO020086,CODO PVC 50,Fontanería,Bodega pequeña / interna,0.82,Unidad,15.18,3.41,1
+ELO020087,LLAVE DE CHORRO 14 REF 079,Fontanería,Bodega pequeña / interna,7.1,Unidad,9.12,2.46,1
+ELO020088,MANGUERA PLÁSTICA 10 REF 080,Fontanería,Bodega pequeña / interna,0.68,Metro,121.61,16.04,1
+ELO020089,TUBO PVC PRESIÓN 5/16 REF 081,Fontanería,Bodega pequeña / interna,4.35,Unidad,31.94,8.53,1
+ELO020090,TEE PVC 60 REF 082,Fontanería,Bodega pequeña / interna,1.48,Unidad,139.07,17.56,1
+ELO020091,UNIÓN PVC LISA 1/2 REF 083,Fontanería,Bodega pequeña / interna,1.15,Unidad,44.63,8.83,1
+ELO020092,LLAVE DE CHORRO 1,Fontanería,Bodega pequeña / interna,7.65,Unidad,122.6,33.58,1
+ELO020093,UNIÓN PVC LISA 12,Fontanería,Bodega pequeña / interna,1.01,Unidad,64.73,21.67,1
+ELO020094,UNIÓN PVC LISA 25,Fontanería,Bodega pequeña / interna,0.17,Unidad,23.24,3.39,1
+ELO020095,TEE PVC 30,Fontanería,Bodega pequeña / interna,0.8,Unidad,36.79,6.46,1
+ELO020096,CODO PVC 30,Fontanería,Bodega pequeña / interna,0.99,Unidad,46.46,14.09,1
+ELO020097,CODO PVC 5/16 REF 089,Fontanería,Bodega pequeña / interna,1.1,Unidad,118.43,37.11,1
+ELO020098,CODO PVC 1/2 REF 090,Fontanería,Bodega pequeña / interna,1.57,Unidad,86.28,18.97,1
+ELO020099,TEE PVC 1/2,Fontanería,Bodega pequeña / interna,1.81,Unidad,44.11,12.13,1
+ELO020100,UNIÓN PVC LISA 60,Fontanería,Bodega pequeña / interna,1.35,Unidad,54.3,10.13,1
+ELO020101,LLAVE DE CHORRO 3/4 REF 093,Fontanería,Bodega pequeña / interna,5.36,Unidad,93.6,20.61,1
+ELO020102,CODO PVC 3/4,Fontanería,Bodega pequeña / interna,0.99,Unidad,16.42,3.12,1
+ELO020103,TUBO PVC PRESIÓN 60 REF 095,Fontanería,Bodega pequeña / interna,3.43,Unidad,22.43,2.81,1
+ELO020104,CODO PVC 50 REF 096,Fontanería,Bodega pequeña / interna,1.78,Unidad,58.4,7.26,1
+ELO020105,MANGUERA PLÁSTICA 3/4,Fontanería,Bodega pequeña / interna,1.49,Metro,40.82,8.56,1
+ELO020106,MANGUERA PLÁSTICA 3/8 REF 098,Fontanería,Bodega pequeña / interna,0.48,Metro,122.74,37.38,1
+ELO020107,CODO PVC 1/4,Fontanería,Bodega pequeña / interna,0.38,Unidad,49.87,6.46,1
+ELO020108,LLAVE DE CHORRO 1 1/2,Fontanería,Bodega pequeña / interna,6.31,Unidad,136.39,28.58,1
+ELO020109,TUBO PVC PRESIÓN 3/8 REF 101,Fontanería,Bodega pequeña / interna,10.19,Unidad,125.07,29.88,1
+ELO020110,MANGUERA PLÁSTICA 20 REF 102,Fontanería,Bodega pequeña / interna,1.3,Metro,110.13,26.98,1
+ELO020111,CODO PVC 60 REF 103,Fontanería,Bodega pequeña / interna,0.5,Unidad,146.82,44.61,1
+ELO020112,TUBO PVC PRESIÓN 3/8 REF 104,Fontanería,Bodega pequeña / interna,8.96,Unidad,103.37,14.78,1
+ELO020113,MANGUERA PLÁSTICA 1 1/2 REF 105,Fontanería,Bodega pequeña / interna,1.05,Metro,78.61,24.95,1
+ELO020114,MANGUERA PLÁSTICA 50,Fontanería,Bodega pequeña / interna,0.97,Metro,72.47,24.02,1
+ELO020115,LLAVE DE CHORRO 2,Fontanería,Bodega pequeña / interna,3.61,Unidad,89.17,28.64,1
+ELO020116,LLAVE DE CHORRO 60,Fontanería,Bodega pequeña / interna,6.36,Unidad,80.65,13.99,1
+ELO020117,LLAVE DE CHORRO 12 REF 109,Fontanería,Bodega pequeña / interna,2.83,Unidad,40.55,11.46,1
+ELO020118,MANGUERA PLÁSTICA 25,Fontanería,Bodega pequeña / interna,0.76,Metro,68.57,9.2,1
+ELO020119,CODO PVC 20,Fontanería,Bodega pequeña / interna,0.92,Unidad,36.04,9.74,1
+ELO020120,UNIÓN PVC LISA 1,Fontanería,Bodega pequeña / interna,0.42,Unidad,10.21,2.48,1
+ELO020121,LLAVE DE CHORRO 1/2 REF 113,Fontanería,Bodega pequeña / interna,8.36,Unidad,52.35,10.58,1
+ELO020122,UNIÓN PVC LISA 20,Fontanería,Bodega pequeña / interna,0.52,Unidad,77.08,26.04,1
+ELO020123,TEE PVC 60 REF 115,Fontanería,Bodega pequeña / interna,1.25,Unidad,79.36,19.63,1
+ELO020124,LLAVE DE CHORRO 10,Fontanería,Bodega pequeña / interna,7.41,Unidad,37.12,5.94,1
+ELO020125,TEE PVC 1 REF 117,Fontanería,Bodega pequeña / interna,0.61,Unidad,49.29,11.19,1
+ELO020126,LLAVE DE CHORRO 1/2 REF 118,Fontanería,Bodega pequeña / interna,4.55,Unidad,68.24,15.22,1
+ELO020127,CODO PVC 30 REF 119,Fontanería,Bodega pequeña / interna,0.47,Unidad,134.16,18.89,1
+ELO020128,UNIÓN PVC LISA 2,Fontanería,Bodega pequeña / interna,0.87,Unidad,18.85,2.63,1
+ELO020129,TUBO PVC PRESIÓN 2,Fontanería,Bodega pequeña / interna,11.9,Unidad,2.49,1,1
+ELO020130,TUBO PVC PRESIÓN 60 REF 122,Fontanería,Bodega pequeña / interna,4.42,Unidad,119.76,19.35,1
+ELO020131,MANGUERA PLÁSTICA 14,Fontanería,Bodega pequeña / interna,2.28,Metro,108.09,14.35,1
+ELO020132,LLAVE DE CHORRO 40 REF 124,Fontanería,Bodega pequeña / interna,4.6,Unidad,12.23,3.34,1
+ELO020133,TEE PVC 1 REF 125,Fontanería,Bodega pequeña / interna,1.99,Unidad,122.59,24.04,1
+ELO020134,CODO PVC 1 1/2,Fontanería,Bodega pequeña / interna,0.39,Unidad,77.52,23.32,1
+ELO020135,TUBO PVC PRESIÓN 1 REF 127,Fontanería,Bodega pequeña / interna,11.26,Unidad,105.92,27.67,1
+ELO020136,CODO PVC 20 REF 128,Fontanería,Bodega pequeña / interna,1.53,Unidad,81.76,21.12,1
+ELO020137,MANGUERA PLÁSTICA 25 REF 129,Fontanería,Bodega pequeña / interna,1.56,Metro,69.56,15.83,1
+ELO030006,BOMBILLO LED 14 W,Electricidad,Área abierta / patio de materiales,3.88,Unidad,107.68,17.19,1
+ELO030007,CABLE ELÉCTRICO THHN 16,Electricidad,Área abierta / patio de materiales,3.68,Metro,60.47,16.49,1
+ELO030008,TOMACORRIENTE POLARIZADO 16,Electricidad,Área abierta / patio de materiales,2.67,Unidad,15.48,5.22,1
+ELO030009,BOMBILLO LED 10 W,Electricidad,Área abierta / patio de materiales,3.16,Unidad,33.79,7.52,1
+ELO030010,TOMACORRIENTE POLARIZADO 50,Electricidad,Área abierta / patio de materiales,2.44,Unidad,84.38,16.1,1
+ELO030011,BOMBILLO LED 40 W,Electricidad,Área abierta / patio de materiales,4.79,Unidad,29.25,7.17,1
+ELO030012,CINTA AISLANTE 60,Electricidad,Área abierta / patio de materiales,2.35,Unidad,146.97,41.71,1
+ELO030013,TOMACORRIENTE POLARIZADO 20,Electricidad,Área abierta / patio de materiales,2.32,Unidad,122.92,36.61,1
+ELO030014,CAJA OCTAGONAL ELÉCTRICA 3/8,Electricidad,Área abierta / patio de materiales,1.72,Unidad,134.64,23.54,1
+ELO030015,BOMBILLO LED 40 W REF 010,Electricidad,Área abierta / patio de materiales,6.15,Unidad,14.48,1.8,1
+ELO030016,INTERRUPTOR SENCILLO 20,Electricidad,Área abierta / patio de materiales,1.87,Unidad,148.03,47.05,1
+ELO030017,CAJA OCTAGONAL ELÉCTRICA 30,Electricidad,Área abierta / patio de materiales,1.95,Unidad,143.18,35.04,1
+ELO030018,BOMBILLO LED 16 W,Electricidad,Área abierta / patio de materiales,5.2,Unidad,127.22,26.14,1
+ELO030019,INTERRUPTOR SENCILLO 16,Electricidad,Área abierta / patio de materiales,2.67,Unidad,89.99,30.62,1
+ELO030020,CINTA AISLANTE 30,Electricidad,Área abierta / patio de materiales,1.29,Unidad,33.55,8.83,1
+ELO030021,CINTA AISLANTE 1/4,Electricidad,Área abierta / patio de materiales,2.15,Unidad,110.34,28.12,1
+ELO030022,CABLE ELÉCTRICO THHN 25,Electricidad,Área abierta / patio de materiales,0.49,Metro,5.27,1.59,1
+ELO030023,CINTA AISLANTE 2,Electricidad,Área abierta / patio de materiales,1.59,Unidad,74.95,16.06,1
+ELO030024,BOMBILLO LED 3/8 W,Electricidad,Área abierta / patio de materiales,1.3,Unidad,104.01,19.39,1
+ELO030025,TOMACORRIENTE POLARIZADO 50 REF 020,Electricidad,Área abierta / patio de materiales,2.74,Unidad,80.57,15.84,1
+ELO030026,CABLE ELÉCTRICO THHN 1,Electricidad,Área abierta / patio de materiales,2.49,Metro,57.69,15.69,1
+ELO030027,CABLE ELÉCTRICO THHN 12,Electricidad,Área abierta / patio de materiales,3.1,Metro,43.48,10.49,1
+ELO030028,CAJA OCTAGONAL ELÉCTRICA 1/4,Electricidad,Área abierta / patio de materiales,1.92,Unidad,112.17,19.33,1
+ELO030029,TOMACORRIENTE POLARIZADO 14,Electricidad,Área abierta / patio de materiales,3.82,Unidad,50.9,17.56,1
+ELO030030,BOMBILLO LED 60 W,Electricidad,Área abierta / patio de materiales,2.07,Unidad,6.7,1.68,1
+ELO030031,CAJA OCTAGONAL ELÉCTRICA 3/4,Electricidad,Área abierta / patio de materiales,1.88,Unidad,6.27,1.2,1
+ELO030032,CAJA OCTAGONAL ELÉCTRICA 1 1/2,Electricidad,Área abierta / patio de materiales,1.82,Unidad,15.91,5.14,1
+ELO030033,INTERRUPTOR SENCILLO 2,Electricidad,Área abierta / patio de materiales,2.57,Unidad,114.68,28.5,1
+ELO030034,INTERRUPTOR SENCILLO 40,Electricidad,Área abierta / patio de materiales,1.74,Unidad,76.05,22.45,1
+ELO030035,CABLE ELÉCTRICO THHN 30,Electricidad,Área abierta / patio de materiales,0.37,Metro,65.78,11.66,1
+ELO030036,TOMACORRIENTE POLARIZADO 10,Electricidad,Área abierta / patio de materiales,3.15,Unidad,123.96,17.85,1
+ELO030037,TOMACORRIENTE POLARIZADO 1/4,Electricidad,Área abierta / patio de materiales,2.52,Unidad,23.33,4.15,1
+ELO030038,INTERRUPTOR SENCILLO 1/4,Electricidad,Área abierta / patio de materiales,1.57,Unidad,54.44,17.49,1
+ELO030039,BOMBILLO LED 1/4 W,Electricidad,Área abierta / patio de materiales,2.26,Unidad,53.47,12.33,1
+ELO030040,CABLE ELÉCTRICO THHN 1 1/2,Electricidad,Área abierta / patio de materiales,3.62,Metro,136.91,31.11,1
+ELO030041,CABLE ELÉCTRICO THHN 3/4,Electricidad,Área abierta / patio de materiales,1.09,Metro,58.45,14.63,1
+ELO030042,TOMACORRIENTE POLARIZADO 14 REF 037,Electricidad,Área abierta / patio de materiales,1.74,Unidad,120.55,29.82,1
+ELO030043,BOMBILLO LED 1/2 W,Electricidad,Área abierta / patio de materiales,4.56,Unidad,87.11,14.87,1
+ELO030044,CINTA AISLANTE 30 REF 039,Electricidad,Área abierta / patio de materiales,2.37,Unidad,2.71,1,1
+ELO030045,CABLE ELÉCTRICO THHN 10,Electricidad,Área abierta / patio de materiales,3.44,Metro,142.41,29.01,1
+ELO030046,CAJA OCTAGONAL ELÉCTRICA 50,Electricidad,Área abierta / patio de materiales,0.66,Unidad,131.5,33.94,1
+ELO030047,TOMACORRIENTE POLARIZADO 20 REF 042,Electricidad,Área abierta / patio de materiales,1.32,Unidad,106.48,19.47,1
+ELO030048,BOMBILLO LED 1 1/2 W,Electricidad,Área abierta / patio de materiales,1.41,Unidad,97.0,17.13,1
+ELO030049,TOMACORRIENTE POLARIZADO 40,Electricidad,Área abierta / patio de materiales,3.61,Unidad,112.43,23.2,1
+ELO030050,INTERRUPTOR SENCILLO 3/4,Electricidad,Área abierta / patio de materiales,1.4,Unidad,71.89,18.33,1
+ELO030051,TOMACORRIENTE POLARIZADO 20 REF 046,Electricidad,Área abierta / patio de materiales,1.69,Unidad,115.19,16.0,1
+ELO030052,BOMBILLO LED 60 W REF 047,Electricidad,Área abierta / patio de materiales,7.2,Unidad,10.17,2.65,1
+ELO030053,TOMACORRIENTE POLARIZADO 5/16,Electricidad,Área abierta / patio de materiales,1.5,Unidad,93.02,14.93,1
+ELO030054,TOMACORRIENTE POLARIZADO 1/2,Electricidad,Área abierta / patio de materiales,2.25,Unidad,143.91,29.32,1
+ELO030055,BOMBILLO LED 2 W,Electricidad,Área abierta / patio de materiales,5.87,Unidad,119.41,28.79,1
+ELO030056,CINTA AISLANTE 3/8,Electricidad,Área abierta / patio de materiales,0.76,Unidad,53.06,15.99,1
+ELO030057,INTERRUPTOR SENCILLO 12,Electricidad,Área abierta / patio de materiales,0.93,Unidad,22.35,7.52,1
+ELO030058,CAJA OCTAGONAL ELÉCTRICA 16,Electricidad,Área abierta / patio de materiales,1.19,Unidad,107.37,32.76,1
+ELO030059,CINTA AISLANTE 3/8 REF 054,Electricidad,Área abierta / patio de materiales,2.22,Unidad,104.0,30.13,1
+ELO030060,CINTA AISLANTE 3/4,Electricidad,Área abierta / patio de materiales,1.56,Unidad,143.15,47.16,1
+ELO030061,CAJA OCTAGONAL ELÉCTRICA 3/4 REF 056,Electricidad,Área abierta / patio de materiales,2.18,Unidad,87.78,19.82,1
+ELO030062,CAJA OCTAGONAL ELÉCTRICA 40,Electricidad,Área abierta / patio de materiales,0.61,Unidad,14.99,4.75,1
+ELO030063,CAJA OCTAGONAL ELÉCTRICA 30 REF 058,Electricidad,Área abierta / patio de materiales,1.92,Unidad,8.27,1.21,1
+ELO030064,BOMBILLO LED 20 W,Electricidad,Área abierta / patio de materiales,7.03,Unidad,114.17,31.35,1
+ELO030065,CABLE ELÉCTRICO THHN 1/4,Electricidad,Área abierta / patio de materiales,1.82,Metro,53.39,9.84,1
+ELO030066,BOMBILLO LED 14 W REF 061,Electricidad,Área abierta / patio de materiales,6.02,Unidad,92.36,30.71,1
+ELO030067,TOMACORRIENTE POLARIZADO 20 REF 062,Electricidad,Área abierta / patio de materiales,3.43,Unidad,132.91,17.76,1
+ELO030068,BOMBILLO LED 60 W REF 063,Electricidad,Área abierta / patio de materiales,1.69,Unidad,145.65,35.76,1
+ELO030069,TOMACORRIENTE POLARIZADO 3/4,Electricidad,Área abierta / patio de materiales,1.54,Unidad,40.64,6.64,1
+ELO030070,CABLE ELÉCTRICO THHN 5/16,Electricidad,Área abierta / patio de materiales,2.97,Metro,87.18,29.12,1
+ELO030071,INTERRUPTOR SENCILLO 20 REF 066,Electricidad,Área abierta / patio de materiales,1.89,Unidad,78.6,9.59,1
+ELO030072,BOMBILLO LED 16 W REF 067,Electricidad,Área abierta / patio de materiales,6.94,Unidad,75.51,13.13,1
+ELO030073,CAJA OCTAGONAL ELÉCTRICA 3/8 REF 068,Electricidad,Área abierta / patio de materiales,2.06,Unidad,85.01,19.53,1
+ELO030074,TOMACORRIENTE POLARIZADO 1/4 REF 069,Electricidad,Área abierta / patio de materiales,1.99,Unidad,98.89,19.99,1
+ELO030075,CABLE ELÉCTRICO THHN 1/2,Electricidad,Área abierta / patio de materiales,0.67,Metro,90.71,15.44,1
+ELO030076,CABLE ELÉCTRICO THHN 1/4 REF 071,Electricidad,Área abierta / patio de materiales,1.34,Metro,133.29,19.94,1
+ELO030077,CABLE ELÉCTRICO THHN 1/2 REF 072,Electricidad,Área abierta / patio de materiales,1.24,Metro,124.18,33.83,1
+ELO030078,CABLE ELÉCTRICO THHN 3/4 REF 073,Electricidad,Área abierta / patio de materiales,1.5,Metro,140.33,18.85,1
+ELO030079,TOMACORRIENTE POLARIZADO 10 REF 074,Electricidad,Área abierta / patio de materiales,2.59,Unidad,65.33,13.99,1
+ELO030080,TOMACORRIENTE POLARIZADO 3/4 REF 075,Electricidad,Área abierta / patio de materiales,1.79,Unidad,69.34,17.84,1
+ELO030081,INTERRUPTOR SENCILLO 30,Electricidad,Área abierta / patio de materiales,1.27,Unidad,110.74,31.88,1
+ELO030082,CINTA AISLANTE 3/4 REF 077,Electricidad,Área abierta / patio de materiales,1.93,Unidad,94.09,11.97,1
+ELO030083,TOMACORRIENTE POLARIZADO 30,Electricidad,Área abierta / patio de materiales,1.01,Unidad,23.6,4.03,1
+ELO030084,TOMACORRIENTE POLARIZADO 5/16 REF 079,Electricidad,Área abierta / patio de materiales,1.81,Unidad,121.08,16.44,1
+ELO030085,INTERRUPTOR SENCILLO 1,Electricidad,Área abierta / patio de materiales,1.63,Unidad,111.62,25.5,1
+ELO030086,CABLE ELÉCTRICO THHN 14,Electricidad,Área abierta / patio de materiales,1.11,Metro,98.38,30.96,1
+ELO030087,CAJA OCTAGONAL ELÉCTRICA 1,Electricidad,Área abierta / patio de materiales,1.69,Unidad,119.02,30.62,1
+ELO030088,INTERRUPTOR SENCILLO 1 REF 083,Electricidad,Área abierta / patio de materiales,1.7,Unidad,122.61,19.98,1
+ELO030089,CAJA OCTAGONAL ELÉCTRICA 5/16,Electricidad,Área abierta / patio de materiales,0.64,Unidad,125.97,34.02,1
+ELO030090,CABLE ELÉCTRICO THHN 5/16 REF 085,Electricidad,Área abierta / patio de materiales,1.05,Metro,140.52,22.74,1
+ELO030091,CABLE ELÉCTRICO THHN 25 REF 086,Electricidad,Área abierta / patio de materiales,3.76,Metro,20.06,4.85,1
+ELO030092,CABLE ELÉCTRICO THHN 16 REF 087,Electricidad,Área abierta / patio de materiales,0.58,Metro,51.0,10.14,1
+ELO030093,INTERRUPTOR SENCILLO 50,Electricidad,Área abierta / patio de materiales,3.23,Unidad,98.88,22.75,1
+ELO030094,BOMBILLO LED 16 W REF 089,Electricidad,Área abierta / patio de materiales,3.54,Unidad,108.95,28.4,1
+ELO030095,TOMACORRIENTE POLARIZADO 1 1/2,Electricidad,Área abierta / patio de materiales,3.81,Unidad,118.65,32.76,1
+ELO030096,CINTA AISLANTE 50,Electricidad,Área abierta / patio de materiales,2.49,Unidad,26.73,4.59,1
+ELO030097,BOMBILLO LED 2 W REF 092,Electricidad,Área abierta / patio de materiales,5.83,Unidad,18.76,3.58,1
+ELO030098,CINTA AISLANTE 12,Electricidad,Área abierta / patio de materiales,1.74,Unidad,50.49,7.9,1
+ELO030099,TOMACORRIENTE POLARIZADO 30 REF 094,Electricidad,Área abierta / patio de materiales,3.97,Unidad,119.34,27.74,1
+ELO030100,CAJA OCTAGONAL ELÉCTRICA 1/2,Electricidad,Área abierta / patio de materiales,0.67,Unidad,31.28,5.31,1
+ELO030101,CABLE ELÉCTRICO THHN 12 REF 096,Electricidad,Área abierta / patio de materiales,0.88,Metro,47.54,8.7,1
+ELO030102,INTERRUPTOR SENCILLO 10,Electricidad,Área abierta / patio de materiales,1.89,Unidad,18.24,3.85,1
+ELO040006,SELLADOR ACRÍLICO BEIGE,Pinturas,Área abierta / patio de materiales,10.17,Galón,148.85,39.35,1
+ELO040007,SELLADOR ACRÍLICO NEGRO,Pinturas,Área abierta / patio de materiales,8.69,Galón,67.54,17.59,1
+ELO040008,PINTURA LÁTEX COLOR BLANCO,Pinturas,Área abierta / patio de materiales,15.2,Galón,105.16,35.1,1
+ELO040009,BANDEJA PARA PINTURA BLANCO,Pinturas,Mostrador / sala de ventas,2.67,Unidad,131.27,39.59,1
+ELO040010,BANDEJA PARA PINTURA NEGRO,Pinturas,Mostrador / sala de ventas,6.87,Unidad,113.68,15.46,1
+ELO040011,BANDEJA PARA PINTURA BEIGE,Pinturas,Mostrador / sala de ventas,5.74,Unidad,71.77,21.7,1
+ELO040012,BROCHA ECONÓMICA ROJO PULG,Pinturas,Mostrador / sala de ventas,1.16,Unidad,125.02,17.42,1
+ELO040013,PINTURA LÁTEX COLOR NEGRO,Pinturas,Área abierta / patio de materiales,10.1,Galón,96.89,22.59,1
+ELO040014,PINTURA LÁTEX COLOR CAFÉ,Pinturas,Área abierta / patio de materiales,12.61,Galón,9.29,2.66,1
+ELO040015,PINTURA LÁTEX COLOR AZUL,Pinturas,Área abierta / patio de materiales,9.96,Galón,4.22,1.08,1
+ELO040016,SELLADOR ACRÍLICO VERDE,Pinturas,Área abierta / patio de materiales,13.36,Galón,98.96,34.5,1
+ELO040017,RODILLO FELPA GRIS PULG,Pinturas,Mostrador / sala de ventas,3.43,Unidad,65.0,21.22,1
+ELO040018,BROCHA ECONÓMICA BLANCO PULG,Pinturas,Mostrador / sala de ventas,2.32,Unidad,135.78,22.06,1
+ELO040019,RODILLO FELPA NEGRO PULG,Pinturas,Mostrador / sala de ventas,3.82,Unidad,96.17,11.95,1
+ELO040020,BANDEJA PARA PINTURA CAFÉ,Pinturas,Mostrador / sala de ventas,3.18,Unidad,132.77,19.43,1
+ELO040021,BROCHA ECONÓMICA VERDE PULG,Pinturas,Mostrador / sala de ventas,1.62,Unidad,110.67,14.19,1
+ELO040022,PINTURA LÁTEX COLOR AMARILLO,Pinturas,Área abierta / patio de materiales,23.29,Galón,57.17,10.3,1
+ELO040023,BROCHA ECONÓMICA AZUL PULG,Pinturas,Mostrador / sala de ventas,2.87,Unidad,78.4,15.07,1
+ELO040024,SELLADOR ACRÍLICO ROJO,Pinturas,Área abierta / patio de materiales,17.5,Galón,134.39,20.59,1
+ELO040025,PINTURA LÁTEX COLOR VERDE,Pinturas,Área abierta / patio de materiales,8.18,Galón,71.47,23.86,1
+ELO040026,BANDEJA PARA PINTURA VERDE,Pinturas,Mostrador / sala de ventas,3.24,Unidad,40.98,7.29,1
+ELO040027,PINTURA LÁTEX COLOR BLANCO REF 022,Pinturas,Área abierta / patio de materiales,9.81,Galón,29.21,4.71,1
+ELO040028,SELLADOR ACRÍLICO AZUL,Pinturas,Área abierta / patio de materiales,15.39,Galón,91.62,28.72,1
+ELO040029,BROCHA ECONÓMICA GRIS PULG,Pinturas,Mostrador / sala de ventas,2.34,Unidad,92.34,21.88,1
+ELO040030,PINTURA LÁTEX COLOR ROJO,Pinturas,Área abierta / patio de materiales,18.64,Galón,128.6,25.51,1
+ELO040031,BANDEJA PARA PINTURA BLANCO REF 026,Pinturas,Mostrador / sala de ventas,4.93,Unidad,134.85,40.69,1
+ELO040032,PINTURA LÁTEX COLOR GRIS,Pinturas,Área abierta / patio de materiales,21.97,Galón,107.95,31.59,1
+ELO040033,PINTURA LÁTEX COLOR BEIGE,Pinturas,Área abierta / patio de materiales,11.71,Galón,82.86,22.82,1
+ELO040034,PINTURA LÁTEX COLOR AMARILLO REF 029,Pinturas,Área abierta / patio de materiales,14.2,Galón,63.85,16.47,1
+ELO040035,PINTURA LÁTEX COLOR CAFÉ REF 030,Pinturas,Área abierta / patio de materiales,13.95,Galón,52.99,17.52,1
+ELO040036,PINTURA LÁTEX COLOR NEGRO REF 031,Pinturas,Área abierta / patio de materiales,17.43,Galón,96.52,17.53,1
+ELO040037,PINTURA LÁTEX COLOR CAFÉ REF 032,Pinturas,Área abierta / patio de materiales,13.9,Galón,128.42,21.88,1
+ELO040038,BROCHA ECONÓMICA AMARILLO PULG,Pinturas,Mostrador / sala de ventas,1.3,Unidad,91.74,13.93,1
+ELO040039,BROCHA ECONÓMICA AZUL PULG REF 034,Pinturas,Mostrador / sala de ventas,1.48,Unidad,143.46,48.26,1
+ELO040040,BANDEJA PARA PINTURA VERDE REF 035,Pinturas,Mostrador / sala de ventas,5.21,Unidad,66.02,19.96,1
+ELO040041,BROCHA ECONÓMICA ROJO PULG REF 036,Pinturas,Mostrador / sala de ventas,2.35,Unidad,30.85,7.75,1
+ELO040042,BANDEJA PARA PINTURA BLANCO REF 037,Pinturas,Mostrador / sala de ventas,3.41,Unidad,115.32,34.27,1
+ELO040043,BANDEJA PARA PINTURA NEGRO REF 038,Pinturas,Mostrador / sala de ventas,4.43,Unidad,61.62,9.0,1
+ELO040044,RODILLO FELPA NEGRO PULG REF 039,Pinturas,Mostrador / sala de ventas,5.83,Unidad,26.46,5.52,1
+ELO040045,PINTURA LÁTEX COLOR BLANCO REF 040,Pinturas,Área abierta / patio de materiales,22.65,Galón,97.94,18.03,1
+ELO040046,BANDEJA PARA PINTURA AMARILLO,Pinturas,Mostrador / sala de ventas,5.67,Unidad,38.25,6.89,1
+ELO040047,PINTURA LÁTEX COLOR CAFÉ REF 042,Pinturas,Área abierta / patio de materiales,20.01,Galón,125.51,41.47,1
+ELO040048,SELLADOR ACRÍLICO NEGRO REF 043,Pinturas,Área abierta / patio de materiales,15.69,Galón,133.91,24.25,1
+ELO040049,SELLADOR ACRÍLICO BLANCO,Pinturas,Área abierta / patio de materiales,8.33,Galón,38.48,10.7,1
+ELO040050,PINTURA LÁTEX COLOR AMARILLO REF 045,Pinturas,Área abierta / patio de materiales,19.85,Galón,14.27,3.28,1
+ELO040051,SELLADOR ACRÍLICO VERDE REF 046,Pinturas,Área abierta / patio de materiales,8.52,Galón,124.84,29.81,1
+ELO040052,SELLADOR ACRÍLICO GRIS,Pinturas,Área abierta / patio de materiales,15.66,Galón,56.97,14.95,1
+ELO040053,BANDEJA PARA PINTURA NEGRO REF 048,Pinturas,Mostrador / sala de ventas,3.24,Unidad,132.58,45.01,1
+ELO040054,SELLADOR ACRÍLICO GRIS REF 049,Pinturas,Área abierta / patio de materiales,15.11,Galón,129.0,43.51,1
+ELO040055,RODILLO FELPA ROJO PULG,Pinturas,Mostrador / sala de ventas,4.0,Unidad,19.84,2.97,1
+ELO040056,BANDEJA PARA PINTURA GRIS,Pinturas,Mostrador / sala de ventas,4.96,Unidad,87.02,26.16,1
+ELO040057,PINTURA LÁTEX COLOR ROJO REF 052,Pinturas,Área abierta / patio de materiales,21.3,Galón,43.19,5.21,1
+ELO040058,RODILLO FELPA BEIGE PULG,Pinturas,Mostrador / sala de ventas,1.78,Unidad,42.42,12.04,1
+ELO040059,RODILLO FELPA AZUL PULG,Pinturas,Mostrador / sala de ventas,1.95,Unidad,38.76,13.18,1
+ELO050006,ADITIVO PARA MOTOR 25,Automotriz,Área abierta / patio de materiales,7.46,Unidad,116.22,29.99,1
+ELO050007,ACEITE MULTIGRADO 20,Automotriz,Área abierta / patio de materiales,15.62,Unidad,99.25,24.89,1
+ELO050008,ACEITE MULTIGRADO 1/4,Automotriz,Área abierta / patio de materiales,15.36,Unidad,145.02,49.35,1
+ELO050009,ACEITE MULTIGRADO 5/16,Automotriz,Área abierta / patio de materiales,5.31,Unidad,25.47,3.33,1
+ELO050010,FILTRO DE ACEITE MODELO 25,Automotriz,Área abierta / patio de materiales,2.06,Unidad,46.28,15.7,1
+ELO050011,ADITIVO PARA MOTOR 20,Automotriz,Área abierta / patio de materiales,8.66,Unidad,71.31,14.88,1
+ELO050012,REFRIGERANTE AUTOMOTRIZ 1 1/2,Automotriz,Área abierta / patio de materiales,8.39,Galón,91.85,14.42,1
+ELO050013,REFRIGERANTE AUTOMOTRIZ 5/16,Automotriz,Área abierta / patio de materiales,4.35,Galón,16.89,3.85,1
+ELO050014,ADITIVO PARA MOTOR 1 1/2,Automotriz,Área abierta / patio de materiales,7.0,Unidad,94.58,24.49,1
+ELO050015,ADITIVO PARA MOTOR 1 1/2 REF 010,Automotriz,Área abierta / patio de materiales,5.89,Unidad,93.18,16.04,1
+ELO050016,ADITIVO PARA MOTOR 3/8,Automotriz,Área abierta / patio de materiales,8.11,Unidad,32.44,5.83,1
+ELO050017,FILTRO DE ACEITE MODELO 10,Automotriz,Área abierta / patio de materiales,5.37,Unidad,21.92,4.92,1
+ELO050018,ACEITE MULTIGRADO 12,Automotriz,Área abierta / patio de materiales,9.1,Unidad,101.25,32.96,1
+ELO050019,ADITIVO PARA MOTOR 14,Automotriz,Área abierta / patio de materiales,8.81,Unidad,108.29,35.16,1
+ELO050020,REFRIGERANTE AUTOMOTRIZ 12,Automotriz,Área abierta / patio de materiales,6.61,Galón,78.81,27.56,1
+ELO050021,FILTRO DE ACEITE MODELO 14,Automotriz,Área abierta / patio de materiales,6.17,Unidad,123.1,36.39,1
+ELO050022,ACEITE MULTIGRADO 10,Automotriz,Área abierta / patio de materiales,11.83,Unidad,143.55,42.84,1
+ELO050023,ADITIVO PARA MOTOR 25 REF 018,Automotriz,Área abierta / patio de materiales,9.25,Unidad,138.99,39.24,1
+ELO050024,FILTRO DE ACEITE MODELO 1/2,Automotriz,Área abierta / patio de materiales,6.15,Unidad,31.13,4.12,1
+ELO050025,ADITIVO PARA MOTOR 50,Automotriz,Área abierta / patio de materiales,5.44,Unidad,52.65,9.6,1
+ELO050026,ACEITE MULTIGRADO 10 REF 021,Automotriz,Área abierta / patio de materiales,15.05,Unidad,59.37,17.02,1
+ELO050027,ADITIVO PARA MOTOR 5/16,Automotriz,Área abierta / patio de materiales,8.01,Unidad,5.09,1.49,1
+ELO050028,REFRIGERANTE AUTOMOTRIZ 40,Automotriz,Área abierta / patio de materiales,5.52,Galón,44.79,15.12,1
+ELO050029,FILTRO DE ACEITE MODELO 60,Automotriz,Área abierta / patio de materiales,2.23,Unidad,80.87,20.93,1
+ELO050030,ACEITE MULTIGRADO 2,Automotriz,Área abierta / patio de materiales,8.5,Unidad,110.33,14.45,1
+ELO050031,ADITIVO PARA MOTOR 12,Automotriz,Área abierta / patio de materiales,6.62,Unidad,98.59,23.92,1
+ELO050032,ADITIVO PARA MOTOR 3/8 REF 027,Automotriz,Área abierta / patio de materiales,4.87,Unidad,50.62,13.0,1
+ELO050033,ACEITE MULTIGRADO 12 REF 028,Automotriz,Área abierta / patio de materiales,9.96,Unidad,115.87,21.11,1
+ELO050034,FILTRO DE ACEITE MODELO 60 REF 029,Automotriz,Área abierta / patio de materiales,2.2,Unidad,65.63,19.82,1
+ELO050035,ADITIVO PARA MOTOR 50 REF 030,Automotriz,Área abierta / patio de materiales,4.44,Unidad,133.68,30.36,1
+ELO050036,FILTRO DE ACEITE MODELO 5/16,Automotriz,Área abierta / patio de materiales,7.91,Unidad,124.66,26.35,1
+ELO050037,REFRIGERANTE AUTOMOTRIZ 30,Automotriz,Área abierta / patio de materiales,6.74,Galón,49.14,13.11,1
+ELO050038,REFRIGERANTE AUTOMOTRIZ 14,Automotriz,Área abierta / patio de materiales,3.65,Galón,8.91,2.19,1
+ELO050039,ADITIVO PARA MOTOR 10,Automotriz,Área abierta / patio de materiales,9.83,Unidad,51.61,13.02,1
+ELO050040,ACEITE MULTIGRADO 30,Automotriz,Área abierta / patio de materiales,10.51,Unidad,67.04,11.89,1
+ELO050041,ADITIVO PARA MOTOR 16,Automotriz,Área abierta / patio de materiales,7.65,Unidad,80.98,20.78,1
+ELO050042,ACEITE MULTIGRADO 30 REF 037,Automotriz,Área abierta / patio de materiales,9.11,Unidad,98.81,33.24,1
+ELO050043,FILTRO DE ACEITE MODELO 14 REF 038,Automotriz,Área abierta / patio de materiales,2.71,Unidad,123.63,27.79,1
+ELO050044,REFRIGERANTE AUTOMOTRIZ 50,Automotriz,Área abierta / patio de materiales,4.64,Galón,146.05,29.39,1
+ELO050045,FILTRO DE ACEITE MODELO 12,Automotriz,Área abierta / patio de materiales,4.28,Unidad,74.36,10.22,1
+ELO050046,REFRIGERANTE AUTOMOTRIZ 60,Automotriz,Área abierta / patio de materiales,4.74,Galón,95.94,29.48,1
+ELO050047,FILTRO DE ACEITE MODELO 1/4,Automotriz,Área abierta / patio de materiales,2.22,Unidad,132.64,29.09,1
+ELO050048,FILTRO DE ACEITE MODELO 14 REF 043,Automotriz,Área abierta / patio de materiales,3.9,Unidad,58.57,20.15,1
+ELO050049,ACEITE MULTIGRADO 3/8,Automotriz,Área abierta / patio de materiales,13.29,Unidad,44.53,12.68,1
+ELO050050,REFRIGERANTE AUTOMOTRIZ 5/16 REF 045,Automotriz,Área abierta / patio de materiales,6.14,Galón,103.17,20.09,1
+ELO050051,REFRIGERANTE AUTOMOTRIZ 14 REF 046,Automotriz,Área abierta / patio de materiales,3.8,Galón,29.42,7.78,1
+ELO050052,ADITIVO PARA MOTOR 3/8 REF 047,Automotriz,Área abierta / patio de materiales,8.87,Unidad,76.45,22.91,1
+ELO050053,REFRIGERANTE AUTOMOTRIZ 1/4,Automotriz,Área abierta / patio de materiales,5.63,Galón,134.27,44.01,1
+ELO050054,FILTRO DE ACEITE MODELO 25 REF 049,Automotriz,Área abierta / patio de materiales,5.04,Unidad,2.62,1,1
+ELO050055,ACEITE MULTIGRADO 30 REF 050,Automotriz,Área abierta / patio de materiales,8.92,Unidad,97.96,14.36,1
+ELO050056,ACEITE MULTIGRADO 3/8 REF 051,Automotriz,Área abierta / patio de materiales,9.89,Unidad,93.11,20.27,1
+ELO050057,ACEITE MULTIGRADO 3/8 REF 052,Automotriz,Área abierta / patio de materiales,11.13,Unidad,100.33,23.55,1
+ELO060006,CINTA MÉTRICA 40 M,Herramientas,Mostrador / sala de ventas,7.37,Unidad,70.58,19.84,1
+ELO060007,MARTILLO MANGO FIBRA 20,Herramientas,Mostrador / sala de ventas,12.48,Unidad,97.69,27.49,1
+ELO060008,CINTA MÉTRICA 60 M,Herramientas,Mostrador / sala de ventas,6.88,Unidad,31.91,10.8,1
+ELO060009,DISCO CORTE METAL 1,Herramientas,Mostrador / sala de ventas,2.34,Unidad,106.05,23.75,1
+ELO060010,DESTORNILLADOR PUNTA PLANA 1,Herramientas,Mostrador / sala de ventas,3.57,Unidad,10.99,2.38,1
+ELO060011,DESTORNILLADOR PUNTA PLANA 1/4,Herramientas,Mostrador / sala de ventas,3.17,Unidad,32.2,6.6,1
+ELO060012,CINTA MÉTRICA 12 M,Herramientas,Mostrador / sala de ventas,5.74,Unidad,113.45,14.27,1
+ELO060013,DESTORNILLADOR PUNTA PLANA 30,Herramientas,Mostrador / sala de ventas,1.77,Unidad,27.42,6.32,1
+ELO060014,DESTORNILLADOR PUNTA PLANA 25,Herramientas,Mostrador / sala de ventas,1.06,Unidad,89.06,18.1,1
+ELO060015,CINTA MÉTRICA 1 1/2 M,Herramientas,Mostrador / sala de ventas,3.95,Unidad,113.65,23.0,1
+ELO060016,DESTORNILLADOR PUNTA PLANA 60,Herramientas,Mostrador / sala de ventas,4.01,Unidad,4.59,1,1
+ELO060017,MARTILLO MANGO FIBRA 20 REF 012,Herramientas,Mostrador / sala de ventas,13.1,Unidad,58.95,20.21,1
+ELO070006,CLAVO COMÚN 12 LB,Carpintería,Área abierta / patio de materiales,1.6,Libra,20.77,4.08,1
+ELO070007,CLAVO COMÚN 2 LB,Carpintería,Área abierta / patio de materiales,1.62,Libra,93.87,27.66,1
+,TORNILLO PARA MADERA 1/2,Carpintería,Mostrador / sala de ventas,4.46,Bolsa,99.7,27.31,0
+,PEGAMENTO PARA MADERA 40,Carpintería,Mostrador / sala de ventas,5.3,Unidad,37.25,10.16,0
+,PEGAMENTO PARA MADERA 40 REF 005,Carpintería,Mostrador / sala de ventas,5.53,Unidad,96.78,15.72,0
+,TORNILLO PARA MADERA 2,Carpintería,Mostrador / sala de ventas,1.25,Bolsa,96.89,13.49,0
+,LIJA PARA MADERA GRANO 16,Carpintería,Área abierta / patio de materiales,0.84,Unidad,22.1,7.36,0
+ELO070013,CLAVO COMÚN 60 LB,Carpintería,Área abierta / patio de materiales,2.86,Libra,54.97,8.34,1

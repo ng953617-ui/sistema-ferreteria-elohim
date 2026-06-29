@@ -1,110 +1,173 @@
-"""
-modulos/ventas.py
-Punto de Venta (POS): búsqueda de producto, carrito, registro de venta,
-descuento automático de stock y generación de movimiento de inventario.
-"""
+"""Módulo POS / punto de venta."""
+from __future__ import annotations
 
-import streamlit as st
+from decimal import Decimal
+
 import pandas as pd
-from config.db import run_query, run_action
+import streamlit as st
+
+from config.conexion import fetch_df, get_connection
 
 
-def mostrar(rol):
-    st.header("🛒 Punto de Venta")
+def _init_cart() -> None:
+    st.session_state.setdefault("carrito", [])
 
-    if "carrito" not in st.session_state:
-        st.session_state["carrito"] = []
 
-    # --- Buscar producto ---
-    buscar = st.text_input("Buscar producto por nombre o código de barras")
-    if buscar:
-        resultados = run_query(
-            "SELECT ID_Producto, Nombre, Precio_Venta, Stock_Actual, Unidad_Medida "
-            "FROM PRODUCTO WHERE Nombre LIKE %s OR Codigo_Barra LIKE %s LIMIT 10",
-            (f"%{buscar}%", f"%{buscar}%")
+def _buscar_productos(texto: str) -> pd.DataFrame:
+    if not texto:
+        return fetch_df(
+            """
+            SELECT id_producto, codigo_barra, nombre, precio_venta, stock_actual, unidad_medida
+            FROM productos
+            WHERE activo=1
+            ORDER BY nombre
+            LIMIT 100
+            """
         )
-        for prod in resultados:
-            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
-            col1.write(f"**{prod['Nombre']}** (stock: {prod['Stock_Actual']} {prod['Unidad_Medida']})")
-            col2.write(f"${prod['Precio_Venta']}")
-            cantidad = col3.number_input(
-                "Cant.", min_value=0.0, step=1.0, key=f"cant_{prod['ID_Producto']}", label_visibility="collapsed"
+    return fetch_df(
+        """
+        SELECT id_producto, codigo_barra, nombre, precio_venta, stock_actual, unidad_medida
+        FROM productos
+        WHERE activo=1 AND (nombre LIKE %s OR codigo_barra LIKE %s)
+        ORDER BY nombre
+        LIMIT 100
+        """,
+        (f"%{texto}%", f"%{texto}%"),
+    )
+
+
+def mostrar(rol: str) -> None:
+    """Registra ventas rápidas, actualiza inventario y genera movimientos de salida."""
+    _init_cart()
+    st.title("Punto de venta")
+    st.caption("Venta rápida por búsqueda de texto o código de barras. Métodos: efectivo y transferencia.")
+
+    col_buscar, col_resumen = st.columns([1.2, 1])
+    with col_buscar:
+        st.subheader("Agregar producto")
+        texto = st.text_input("Buscar / escanear código", placeholder="cemento, pvc, 902124...")
+        productos = _buscar_productos(texto)
+        if productos.empty:
+            st.info("No hay productos disponibles con esa búsqueda.")
+        else:
+            id_producto = st.selectbox(
+                "Producto",
+                productos["id_producto"].tolist(),
+                format_func=lambda x: productos.loc[productos["id_producto"] == x, "nombre"].iloc[0],
             )
-            if col4.button("Agregar", key=f"add_{prod['ID_Producto']}"):
-                if cantidad <= 0:
-                    st.warning("Indica una cantidad mayor a 0.")
-                elif cantidad > prod["Stock_Actual"]:
-                    st.error("No hay suficiente stock disponible.")
+            prod = productos[productos["id_producto"] == id_producto].iloc[0]
+            st.write(f"**Precio:** ${float(prod['precio_venta']):,.2f} | **Stock:** {prod['stock_actual']} {prod['unidad_medida']}")
+            cantidad = st.number_input("Cantidad", min_value=0.01, step=1.0, value=1.0)
+            if st.button("Agregar al carrito", use_container_width=True):
+                if Decimal(str(cantidad)) > Decimal(str(prod["stock_actual"])):
+                    st.error("La cantidad solicitada supera el stock disponible.")
                 else:
-                    st.session_state["carrito"].append({
-                        "ID_Producto": prod["ID_Producto"],
-                        "Nombre": prod["Nombre"],
-                        "Cantidad": cantidad,
-                        "Precio_Unitario": float(prod["Precio_Venta"]),
-                        "Subtotal": cantidad * float(prod["Precio_Venta"])
-                    })
-                    st.success(f"{prod['Nombre']} agregado al carrito.")
+                    item = {
+                        "id_producto": int(prod["id_producto"]),
+                        "producto": prod["nombre"],
+                        "cantidad": float(cantidad),
+                        "precio_unitario": float(prod["precio_venta"]),
+                        "subtotal": float(Decimal(str(cantidad)) * Decimal(str(prod["precio_venta"]))),
+                    }
+                    st.session_state["carrito"].append(item)
+                    st.success("Producto agregado al carrito.")
                     st.rerun()
 
-    st.divider()
-    st.subheader("Carrito")
-
-    if not st.session_state["carrito"]:
-        st.info("El carrito está vacío.")
-    else:
-        df_carrito = pd.DataFrame(st.session_state["carrito"])
-        st.dataframe(df_carrito[["Nombre", "Cantidad", "Precio_Unitario", "Subtotal"]],
-                     use_container_width=True)
-        total = df_carrito["Subtotal"].sum()
-        st.metric("Total de la venta", f"${total:.2f}")
-
-        if st.button("Vaciar carrito"):
-            st.session_state["carrito"] = []
-            st.rerun()
-
-        with st.form("cerrar_venta"):
-            metodo_pago = st.selectbox("Método de pago", ["efectivo", "transferencia"])
-            tipo_comp = st.selectbox(
-                "Tipo de comprobante", ["consumidor final", "factura interna", "CCF"]
-            )
-            cliente_id = None
-            if tipo_comp == "CCF":
-                clientes = run_query("SELECT ID_Cliente, Nombre FROM CLIENTE")
-                if clientes:
-                    cli_map = {c["Nombre"]: c["ID_Cliente"] for c in clientes}
-                    cliente_sel = st.selectbox("Cliente (requerido para CCF)", list(cli_map.keys()))
-                    cliente_id = cli_map[cliente_sel]
-                else:
-                    st.warning("No hay clientes registrados. Regístralo primero en el módulo Clientes.")
-            confirmar = st.form_submit_button("Confirmar venta")
-
-        if confirmar:
-            venta_id = run_action(
-                """INSERT INTO VENTA (Usuario_ID, Cliente_ID, Total, Metodo_Pago, Tipo_Comprobante)
-                   VALUES (%s,%s,%s,%s,%s)""",
-                (st.session_state["usuario_id"], cliente_id, float(total), metodo_pago, tipo_comp)
-            )
-            if venta_id:
-                for item in st.session_state["carrito"]:
-                    run_action(
-                        """INSERT INTO DETALLE_VENTA
-                           (Venta_ID, Producto_ID, Cantidad, Precio_Unitario, Subtotal)
-                           VALUES (%s,%s,%s,%s,%s)""",
-                        (venta_id, item["ID_Producto"], item["Cantidad"],
-                         item["Precio_Unitario"], item["Subtotal"])
-                    )
-                    # Descontar stock
-                    run_action(
-                        "UPDATE PRODUCTO SET Stock_Actual = Stock_Actual - %s WHERE ID_Producto = %s",
-                        (item["Cantidad"], item["ID_Producto"])
-                    )
-                    # Movimiento de inventario (salida)
-                    run_action(
-                        """INSERT INTO MOVIMIENTO_INVENTARIO
-                           (Producto_ID, Tipo_Movimiento, Cantidad, Referencia_ID, Usuario_ID, Motivo)
-                           VALUES (%s,'salida',%s,%s,%s,'Venta POS')""",
-                        (item["ID_Producto"], item["Cantidad"], venta_id, st.session_state["usuario_id"])
-                    )
+    with col_resumen:
+        st.subheader("Carrito")
+        carrito = st.session_state.get("carrito", [])
+        if carrito:
+            df_cart = pd.DataFrame(carrito)
+            st.dataframe(df_cart[["producto", "cantidad", "precio_unitario", "subtotal"]], use_container_width=True, hide_index=True)
+            total = float(df_cart["subtotal"].sum())
+            st.metric("Total", f"${total:,.2f}")
+            if st.button("Vaciar carrito", use_container_width=True):
                 st.session_state["carrito"] = []
-                st.success(f"Venta #{venta_id} registrada correctamente por ${total:.2f}.")
                 st.rerun()
+        else:
+            st.info("El carrito está vacío.")
+
+    st.markdown("---")
+    st.subheader("Confirmar venta")
+    clientes = fetch_df("SELECT id_cliente, nombre, tipo_cliente FROM clientes ORDER BY nombre")
+    carrito = st.session_state.get("carrito", [])
+    if not carrito:
+        st.warning("Agregue productos al carrito para registrar una venta.")
+        return
+
+    with st.form("form_confirmar_venta"):
+        metodo = st.selectbox("Método de pago", ["Efectivo", "Transferencia"])
+        tipo_comp = st.selectbox("Tipo de comprobante", ["Factura interna", "Consumidor final", "CCF"])
+        id_cliente = None
+        if not clientes.empty:
+            opciones = [0] + clientes["id_cliente"].tolist()
+            id_sel = st.selectbox(
+                "Cliente",
+                opciones,
+                format_func=lambda x: "Venta rápida / consumidor final" if x == 0 else clientes.loc[clientes["id_cliente"] == x, "nombre"].iloc[0],
+            )
+            id_cliente = None if id_sel == 0 else int(id_sel)
+        observaciones = st.text_area("Observaciones", value="Venta registrada desde POS")
+        confirmar = st.form_submit_button("Registrar venta", use_container_width=True)
+
+    if confirmar:
+        _registrar_venta(carrito, metodo, tipo_comp, id_cliente, observaciones)
+
+
+def _registrar_venta(carrito: list[dict], metodo: str, tipo_comp: str, id_cliente: int | None, observaciones: str) -> None:
+    total = sum(Decimal(str(item["subtotal"])) for item in carrito)
+    conn = get_connection()
+    try:
+        cur = conn.cursor()
+        # Verificación final de inventario con bloqueo.
+        for item in carrito:
+            cur.execute("SELECT stock_actual FROM productos WHERE id_producto=%s FOR UPDATE", (item["id_producto"],))
+            result = cur.fetchone()
+            if not result:
+                raise ValueError(f"Producto no encontrado: {item['producto']}")
+            stock_actual = Decimal(str(result[0]))
+            if Decimal(str(item["cantidad"])) > stock_actual:
+                raise ValueError(f"Stock insuficiente para {item['producto']}. Disponible: {stock_actual}")
+
+        cur.execute(
+            """
+            INSERT INTO ventas (id_usuario, id_cliente, total, metodo_pago, tipo_comprobante, observaciones)
+            VALUES (%s,%s,%s,%s,%s,%s)
+            """,
+            (st.session_state.get("id_usuario"), id_cliente, total, metodo, tipo_comp, observaciones),
+        )
+        id_venta = cur.lastrowid
+
+        for item in carrito:
+            cantidad = Decimal(str(item["cantidad"]))
+            precio = Decimal(str(item["precio_unitario"]))
+            subtotal = Decimal(str(item["subtotal"]))
+            cur.execute(
+                """
+                INSERT INTO detalle_venta (id_venta, id_producto, cantidad, precio_unitario, subtotal)
+                VALUES (%s,%s,%s,%s,%s)
+                """,
+                (id_venta, item["id_producto"], cantidad, precio, subtotal),
+            )
+            cur.execute(
+                "UPDATE productos SET stock_actual = stock_actual - %s WHERE id_producto=%s",
+                (cantidad, item["id_producto"]),
+            )
+            cur.execute(
+                """
+                INSERT INTO movimientos_inventario
+                (id_producto, tipo_movimiento, cantidad, referencia_tipo, referencia_id, id_usuario, motivo)
+                VALUES (%s,'salida',%s,'venta',%s,%s,%s)
+                """,
+                (item["id_producto"], cantidad, id_venta, st.session_state.get("id_usuario"), "Salida por venta"),
+            )
+        conn.commit()
+        st.session_state["carrito"] = []
+        st.success(f"Venta #{id_venta} registrada correctamente por ${float(total):,.2f}.")
+        st.rerun()
+    except Exception as exc:
+        conn.rollback()
+        st.error("No se pudo registrar la venta.")
+        st.caption(f"Detalle técnico: {exc}")
+    finally:
+        conn.close()

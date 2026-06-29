@@ -1,0 +1,5 @@
+nombre,tipo_cliente,documento,nit,nrc,giro,departamento,municipio,telefono,correo
+Consumidor Final,CONSUMIDOR_FINAL,,,,,San Salvador,San Salvador,,
+Cliente de Mostrador,CONSUMIDOR_FINAL,,,,,San Salvador,San Salvador,,
+Constructora Elohim Demo,CONTRIBUYENTE,,0614-000000-000-0,000000-0,Construcción y remodelación,San Salvador,San Salvador,2222-1001,cliente.demo@correo.com
+Taller Automotriz Demo,CONTRIBUYENTE,,0614-111111-111-1,111111-1,Servicios automotrices,La Libertad,Antiguo Cuscatlán,2222-1002,taller.demo@correo.com

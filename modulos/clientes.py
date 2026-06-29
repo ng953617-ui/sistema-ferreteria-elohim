@@ -1,43 +1,60 @@
-"""
-modulos/clientes.py
-Gestión de clientes (consumidor final / contribuyente con datos fiscales para CCF).
-"""
+"""Módulo de clientes."""
+from __future__ import annotations
 
 import streamlit as st
-import pandas as pd
-from config.db import run_query, run_action
+
+from config.conexion import execute, fetch_df
 
 
-def mostrar(rol):
-    st.header("🧾 Clientes")
+def mostrar(rol: str) -> None:
+    """Permite consultar y registrar clientes para venta rápida y CCF futuro."""
+    st.title("Clientes")
+    st.caption("Datos de consumidor final y contribuyentes para comprobantes fiscales futuros.")
 
-    tab1, tab2 = st.tabs(["Listado", "Nuevo cliente"])
+    tabs = st.tabs(["Consultar", "Nuevo cliente"])
 
-    with tab1:
-        clientes = run_query("SELECT * FROM CLIENTE")
-        if clientes:
-            st.dataframe(pd.DataFrame(clientes), use_container_width=True)
-        else:
-            st.info("No hay clientes registrados (las ventas de mostrador no lo requieren).")
+    with tabs[0]:
+        texto = st.text_input("Buscar cliente", placeholder="nombre, NIT, NRC o teléfono")
+        query = "SELECT * FROM clientes WHERE 1=1"
+        params = []
+        if texto:
+            query += " AND (nombre LIKE %s OR nit LIKE %s OR nrc LIKE %s OR telefono LIKE %s)"
+            params = [f"%{texto}%"] * 4
+        query += " ORDER BY nombre LIMIT 1000"
+        df = fetch_df(query, tuple(params))
+        st.dataframe(df, use_container_width=True, hide_index=True)
 
-    with tab2:
-        st.caption("Solo necesario para clientes que requieren Crédito Fiscal (CCF).")
-        with st.form("nuevo_cliente"):
-            nombre = st.text_input("Nombre o razón social")
-            nit = st.text_input("NIT")
-            nrc = st.text_input("NRC")
-            giro = st.text_input("Giro")
-            departamento = st.text_input("Departamento")
-            guardar = st.form_submit_button("Guardar cliente")
+    with tabs[1]:
+        with st.form("form_cliente", clear_on_submit=True):
+            col1, col2 = st.columns(2)
+            with col1:
+                nombre = st.text_input("Nombre / razón social *")
+                tipo = st.selectbox("Tipo de cliente", ["CONSUMIDOR_FINAL", "CONTRIBUYENTE"])
+                documento = st.text_input("DUI / Documento")
+                telefono = st.text_input("Teléfono")
+                correo = st.text_input("Correo")
+            with col2:
+                nit = st.text_input("NIT")
+                nrc = st.text_input("NRC")
+                giro = st.text_input("Giro")
+                departamento = st.text_input("Departamento", value="San Salvador")
+                municipio = st.text_input("Municipio")
+            guardar = st.form_submit_button("Guardar cliente", use_container_width=True)
 
         if guardar:
-            if not nombre:
-                st.warning("El nombre es obligatorio.")
+            if not nombre.strip():
+                st.error("El nombre es obligatorio.")
             else:
-                run_action(
-                    """INSERT INTO CLIENTE (Nombre, NIT, NRC, Giro, Departamento)
-                       VALUES (%s,%s,%s,%s,%s)""",
-                    (nombre, nit, nrc, giro, departamento)
+                execute(
+                    """
+                    INSERT INTO clientes
+                    (nombre, tipo_cliente, documento, nit, nrc, giro, departamento, municipio, telefono, correo)
+                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                    """,
+                    (
+                        nombre.strip(), tipo, documento.strip(), nit.strip(), nrc.strip(), giro.strip(),
+                        departamento.strip(), municipio.strip(), telefono.strip(), correo.strip(),
+                    ),
                 )
-                st.success(f"Cliente '{nombre}' registrado.")
+                st.success("Cliente registrado correctamente.")
                 st.rerun()

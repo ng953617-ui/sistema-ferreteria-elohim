@@ -1,45 +1,85 @@
-"""
-login.py
-Pantalla de inicio de sesión. Valida usuario contra la tabla USUARIO
-y guarda en session_state los datos del usuario autenticado.
-"""
+"""Pantalla de autenticación del sistema."""
+from __future__ import annotations
 
 import streamlit as st
-import bcrypt
-from config.db import run_query
+
+from config.conexion import DBConfigError, fetch_df
+from utils.security import check_password
 
 
-def mostrar_login():
-    st.title("🔧 Ferretería ELOHIM")
-    st.subheader("Iniciar sesión")
+def inicializar_estado_login() -> None:
+    """Inicializa variables de sesión usadas por el login."""
+    st.session_state.setdefault("autenticado", False)
+    st.session_state.setdefault("usuario", None)
+    st.session_state.setdefault("rol", None)
+    st.session_state.setdefault("id_usuario", None)
+    st.session_state.setdefault("nombre_usuario", None)
 
-    with st.form("login_form"):
-        usuario = st.text_input("Usuario")
-        contrasena = st.text_input("Contraseña", type="password")
-        enviar = st.form_submit_button("Ingresar")
 
-    if enviar:
-        if not usuario or not contrasena:
-            st.warning("Completa usuario y contraseña.")
-            return
+def cerrar_sesion() -> None:
+    """Limpia la sesión del usuario actual."""
+    for key in ["autenticado", "usuario", "rol", "id_usuario", "nombre_usuario", "carrito", "carrito_compra"]:
+        if key in st.session_state:
+            del st.session_state[key]
+    st.rerun()
 
-        rows = run_query(
-            "SELECT * FROM USUARIO WHERE Usuario_Login = %s",
-            (usuario,)
-        )
 
-        if not rows:
-            st.error("Usuario no encontrado.")
-            return
+def mostrar_login() -> None:
+    """Renderiza el formulario de inicio de sesión."""
+    inicializar_estado_login()
 
-        user = rows[0]
-        hash_guardado = user["Contrasena_Hash"].encode()
+    st.markdown(
+        """
+        <div class='login-card'>
+            <h1>Ferretería ELOHIM</h1>
+            <p>Sistema de Gestión de Información</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
-        if bcrypt.checkpw(contrasena.encode(), hash_guardado):
-            st.session_state["autenticado"] = True
-            st.session_state["usuario_id"] = user["ID_Usuario"]
-            st.session_state["usuario_nombre"] = user["Nombre"]
-            st.session_state["usuario_rol"] = user["Rol"]
-            st.rerun()
-        else:
-            st.error("Contraseña incorrecta.")
+    col1, col2, col3 = st.columns([1, 1.2, 1])
+    with col2:
+        with st.form("form_login"):
+            st.subheader("Inicio de sesión")
+            usuario = st.text_input("Usuario", placeholder="marvin")
+            contrasena = st.text_input("Contraseña", type="password", placeholder="1234")
+            ingresar = st.form_submit_button("Ingresar", use_container_width=True)
+
+        if ingresar:
+            try:
+                df = fetch_df(
+                    """
+                    SELECT id_usuario, nombre, rol, usuario_login, contrasena_hash
+                    FROM usuarios
+                    WHERE usuario_login = %s AND activo = 1
+                    LIMIT 1
+                    """,
+                    (usuario.strip().lower(),),
+                )
+            except DBConfigError as exc:
+                st.error(str(exc))
+                st.info("Primero configure las credenciales en Streamlit Cloud > Settings > Secrets.")
+                return
+            except Exception as exc:
+                st.error("No se pudo validar el usuario. Verifique que ya importó el archivo SQL en phpMyAdmin.")
+                st.caption(f"Detalle técnico: {exc}")
+                return
+
+            if df.empty:
+                st.error("Usuario o contraseña incorrectos.")
+                return
+
+            row = df.iloc[0]
+            if check_password(contrasena, row["contrasena_hash"]):
+                st.session_state["autenticado"] = True
+                st.session_state["id_usuario"] = int(row["id_usuario"])
+                st.session_state["nombre_usuario"] = row["nombre"]
+                st.session_state["usuario"] = row["usuario_login"]
+                st.session_state["rol"] = row["rol"]
+                st.success("Acceso concedido.")
+                st.rerun()
+            else:
+                st.error("Usuario o contraseña incorrectos.")
+
+        st.caption("Usuarios de prueba incluidos en el SQL: marvin, dayana, juanita y bryan. Contraseña: 1234.")

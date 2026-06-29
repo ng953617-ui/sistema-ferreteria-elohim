@@ -1,38 +1,60 @@
-"""
-menu.py
-Menú lateral. Muestra las opciones disponibles según el rol del usuario (RBAC).
-"""
+"""Menú lateral y permisos por rol."""
+from __future__ import annotations
 
 import streamlit as st
 
-OPCIONES_POR_ROL = {
-    "Administrador": [
-        "Punto de Venta", "Productos", "Proveedores", "Clientes",
-        "Compras", "Caja", "Usuarios", "Reportes"
-    ],
-    "Supervisor": [
-        "Punto de Venta", "Productos", "Proveedores", "Clientes",
-        "Compras", "Caja", "Reportes"
-    ],
-    "Vendedor": [
-        "Punto de Venta", "Productos"
-    ],
+from login import cerrar_sesion
+
+
+ROLE_LABELS = {
+    "ADMIN_PRINCIPAL": "Administrador principal",
+    "SUPERVISOR": "Administrador / Supervisor",
+    "VENDEDOR": "Vendedor",
 }
 
 
-def mostrar_menu():
-    st.sidebar.title("🔧 Ferretería ELOHIM")
-    st.sidebar.write(f"👤 {st.session_state['usuario_nombre']}")
-    st.sidebar.write(f"Rol: {st.session_state['usuario_rol']}")
-    st.sidebar.divider()
+def opciones_por_rol(rol: str) -> list[str]:
+    """Devuelve las opciones visibles según el rol del usuario."""
+    if rol == "ADMIN_PRINCIPAL":
+        return [
+            "Dashboard",
+            "Productos e Inventario",
+            "Proveedores",
+            "Clientes",
+            "Punto de Venta",
+            "Compras",
+            "Caja",
+            "Reportes",
+            "Usuarios",
+        ]
+    if rol == "SUPERVISOR":
+        return [
+            "Dashboard",
+            "Productos e Inventario",
+            "Proveedores",
+            "Clientes",
+            "Punto de Venta",
+            "Compras",
+            "Caja",
+            "Reportes",
+        ]
+    return ["Dashboard", "Productos e Inventario", "Clientes", "Punto de Venta"]
 
-    opciones = OPCIONES_POR_ROL.get(st.session_state["usuario_rol"], [])
-    seleccion = st.sidebar.radio("Menú", opciones)
 
-    st.sidebar.divider()
-    if st.sidebar.button("Cerrar sesión"):
-        for key in ["autenticado", "usuario_id", "usuario_nombre", "usuario_rol"]:
-            st.session_state.pop(key, None)
-        st.rerun()
+def mostrar_menu() -> str:
+    """Renderiza el sidebar y devuelve la opción seleccionada."""
+    rol = st.session_state.get("rol", "VENDEDOR")
+    nombre = st.session_state.get("nombre_usuario", "Usuario")
 
-    return seleccion
+    st.sidebar.markdown("### 🧰 Ferretería ELOHIM")
+    st.sidebar.caption("Sistema SGI - Streamlit + MySQL")
+    st.sidebar.markdown("---")
+    st.sidebar.write(f"**Usuario:** {nombre}")
+    st.sidebar.write(f"**Rol:** {ROLE_LABELS.get(rol, rol)}")
+    st.sidebar.markdown("---")
+
+    opcion = st.sidebar.radio("Menú", opciones_por_rol(rol), label_visibility="collapsed")
+    st.sidebar.markdown("---")
+    if st.sidebar.button("Cerrar sesión", use_container_width=True):
+        cerrar_sesion()
+    return opcion
