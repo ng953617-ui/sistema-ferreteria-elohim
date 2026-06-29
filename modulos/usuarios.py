@@ -4,19 +4,12 @@ from config.conexion import consultar_df, ejecutar
 
 def mostrar():
     st.title("👥 Usuarios y roles")
-    usuario_actual = st.session_state.get("usuario", {})
-    if usuario_actual.get("rol") != "Administrador Principal":
-        st.warning("Solo el Administrador Principal puede administrar usuarios.")
+    rol_actual = st.session_state["usuario"]["rol"]
+    if "Administrador" not in rol_actual:
+        st.warning("Solo administradores pueden administrar usuarios.")
         return
 
-    df = consultar_df(
-        """
-        SELECT id_usuario, usuario_login AS usuario, nombre_completo, rol, activo
-        FROM usuario
-        WHERE usuario_login <> 'usuario' AND nombre_completo <> 'nombre_completo'
-        ORDER BY rol, nombre_completo
-        """
-    )
+    df = consultar_df("SELECT id_usuario, usuario, nombre_completo, rol, activo FROM usuario ORDER BY nombre_completo")
     st.dataframe(df, use_container_width=True, hide_index=True)
 
     st.subheader("Crear usuario")
@@ -30,15 +23,14 @@ def mostrar():
         guardar = st.form_submit_button("Guardar usuario")
 
     if guardar:
-        if not usuario or not nombre or not password:
-            st.warning("Complete todos los campos.")
-        else:
-            ejecutar(
-                """
-                INSERT INTO usuario(usuario_login, contrasena_hash, nombre_completo, rol, activo)
-                VALUES (%s,%s,%s,%s,1)
-                """,
-                (usuario, password, nombre, rol),
-            )
+        if not usuario.strip() or not nombre.strip() or not password.strip():
+            st.error("Complete usuario, nombre y contraseña.")
+            return
+        try:
+            ejecutar("INSERT INTO usuario (usuario,nombre_completo,rol,password_hash,activo) VALUES (%s,%s,%s,%s,1)",
+                    (usuario, nombre, rol, password))
             st.success("Usuario creado correctamente.")
             st.rerun()
+        except Exception as e:
+            st.error("No se pudo crear el usuario. Revise si el usuario ya existe.")
+            st.exception(e)

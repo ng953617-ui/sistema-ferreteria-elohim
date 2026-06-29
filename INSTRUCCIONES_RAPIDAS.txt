@@ -1,25 +1,11 @@
-INSTRUCCIONES RÁPIDAS - FERRETERÍA ELOHIM
+INSTRUCCIONES RÁPIDAS
 
-1. Suba todos los archivos de esta carpeta a GitHub.
-2. En Clever Cloud > phpMyAdmin, seleccione primero la base de datos bmwax8ai0klmmlwuwmpv en el panel izquierdo.
-3. Importe ÚNICAMENTE el archivo database/schema.sql.
-4. El archivo schema.sql es único y contiene todo:
-   - Limpieza de tablas anteriores.
-   - Creación completa de tablas.
-   - Carga de usuarios, categorías, ubicaciones, proveedores, clientes, productos, ventas y movimientos.
-5. En Streamlit Cloud use:
-   Repository: ng953617-ui/sistema-ferreteria-elohim
-   Branch: main
-   Main file path: app.py
-   Python version: 3.11
-6. En Secrets de Streamlit configure:
+1. Subir estos archivos a GitHub reemplazando los anteriores.
+2. Hacer commit.
+3. En Streamlit Cloud verificar los Secrets de MySQL.
+4. Presionar Deploy o Reboot app.
+5. La app crea las tablas y datos iniciales automáticamente.
+6. Entrar con usuario: marvin / contraseña: 1234.
 
-[mysql]
-host = "bmwax8ai0klmmlwuwmpv-mysql.services.clever-cloud.com"
-port = 3306
-database = "bmwax8ai0klmmlwuwmpv"
-user = "ukut6encjnvdsxic"
-password = "PEGAR_CONTRASEÑA_REAL"
-
-7. Reinicie o haga Deploy nuevamente.
-8. Usuario de prueba: marvin / 1234
+Si la base estaba vacía, se cargará automáticamente.
+Si ya tenía datos, no los borra.

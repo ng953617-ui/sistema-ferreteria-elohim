@@ -1,37 +1,10 @@
-# SGI Ferretería Elohim - Streamlit + MySQL
+# Sistema Ferretería Elohim
 
-Aplicación web funcional para el proyecto final de Sistemas de Gestión de la Información. Esta versión está alineada con el diagrama de contexto y el diagrama Entidad-Relación del equipo.
+Sistema de Gestión de Información desarrollado en Python + Streamlit + MySQL para Ferretería Elohim.
 
-## Módulos incluidos
+## Funcionamiento
 
-- Login con roles.
-- Panel principal.
-- Productos e inventario.
-- Clientes y datos fiscales.
-- Proveedores.
-- Punto de venta.
-- Compras y reposición.
-- Cierre de caja.
-- Reportes.
-- Usuarios y roles.
-
-## Tablas principales
-
-- usuario
-- categoria
-- ubicacion
-- proveedor
-- producto
-- producto_proveedor
-- cliente
-- consumidor_final
-- contribuyente
-- venta
-- detalle_venta
-- orden_compra
-- detalle_compra
-- arqueo_caja
-- movimiento_inventario
+La aplicación crea automáticamente las tablas y carga datos iniciales en MySQL al iniciar. Por eso no es obligatorio importar el schema manualmente.
 
 ## Usuarios de prueba
 
@@ -40,14 +13,7 @@ Aplicación web funcional para el proyecto final de Sistemas de Gestión de la I
 - juanita / 1234
 - bryan / 1234
 
-## Despliegue
-
-1. Crear base MySQL en Clever Cloud.
-2. Abrir phpMyAdmin.
-3. Importar `database/schema.sql`.
-4. Subir el proyecto a GitHub.
-5. Crear app en Streamlit Cloud con `app.py` como archivo principal.
-6. Configurar secrets:
+## Secrets de Streamlit
 
 ```toml
 [mysql]
@@ -57,5 +23,3 @@ database = "TU_DATABASE"
 user = "TU_USER"
 password = "TU_PASSWORD"
 ```
-
-7. Usar Python 3.11 y desplegar.
