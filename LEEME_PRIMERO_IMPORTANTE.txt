@@ -1,0 +1,22 @@
+LEEME PRIMERO
+
+Este paquete trae UN SOLO archivo SQL para importar:
+
+database/schema.sql
+
+Ese archivo incluye toda la base de datos completa. No hay que importar ningún otro archivo SQL.
+
+IMPORTANTE EN PHPMYADMIN:
+- Primero haga clic en la base de datos bmwax8ai0klmmlwuwmpv en el panel izquierdo.
+- Después vaya a Importar.
+- Seleccione database/schema.sql.
+- Presione Importar.
+
+Si la importación fue correcta, en la tabla producto deben aparecer productos reales como:
+- Cemento gris Fortaleza tipo GU 42.5 kg
+- Arena lavada
+- Bloque de concreto 15 cm
+- Grava triturada
+- Pintura látex blanca galón
+
+Si aparecen textos como nombre, categoria, stock_actual dentro de las filas, significa que se importó un archivo incorrecto o dañado.

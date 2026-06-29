@@ -1,23 +1,25 @@
-INSTRUCCIONES RÁPIDAS - SISTEMA FERRETERÍA ELOHIM
+INSTRUCCIONES RÁPIDAS - FERRETERÍA ELOHIM
 
-1. Reemplaza en GitHub todos los archivos del repositorio con los archivos de esta carpeta.
-2. En Clever Cloud > PHPMyAdmin, selecciona primero la base de datos bmwax8ai0klmmlwuwmpv.
-3. Importa el archivo database/schema.sql.
-4. Verifica que en la tabla producto aparezcan productos reales, por ejemplo: Cemento gris Fortaleza, Arena lavada, Bloque de concreto.
-5. En Streamlit Cloud > Manage app > Settings > Secrets, usa:
+1. Suba todos los archivos de esta carpeta a GitHub.
+2. En Clever Cloud > phpMyAdmin, seleccione primero la base de datos bmwax8ai0klmmlwuwmpv en el panel izquierdo.
+3. Importe ÚNICAMENTE el archivo database/schema.sql.
+4. El archivo schema.sql es único y contiene todo:
+   - Limpieza de tablas anteriores.
+   - Creación completa de tablas.
+   - Carga de usuarios, categorías, ubicaciones, proveedores, clientes, productos, ventas y movimientos.
+5. En Streamlit Cloud use:
+   Repository: ng953617-ui/sistema-ferreteria-elohim
+   Branch: main
+   Main file path: app.py
+   Python version: 3.11
+6. En Secrets de Streamlit configure:
 
 [mysql]
 host = "bmwax8ai0klmmlwuwmpv-mysql.services.clever-cloud.com"
 port = 3306
 database = "bmwax8ai0klmmlwuwmpv"
 user = "ukut6encjnvdsxic"
-password = "TU_PASSWORD_REAL"
+password = "PEGAR_CONTRASEÑA_REAL"
 
-6. Guarda Secrets y reinicia la app con Reboot app o Deploy.
-7. Ingresa con:
-   marvin / 1234
-
-IMPORTANTE:
-- No subas secrets.toml con contraseña real a GitHub.
-- Si phpMyAdmin dice #1046 No database selected, selecciona la base bmwax8ai0klmmlwuwmpv antes de importar.
-- Si ves filas donde los datos dicen 'nombre', 'categoria', 'stock_actual', reimporta database/schema.sql seleccionando la base correcta.
+7. Reinicie o haga Deploy nuevamente.
+8. Usuario de prueba: marvin / 1234

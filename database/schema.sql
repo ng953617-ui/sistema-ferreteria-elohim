@@ -1,4 +1,12 @@
 -- ================================================================
+-- IMPORTAR ESTE ARCHIVO EN PHPMYADMIN
+-- 1) Seleccione primero la base de datos bmwax8ai0klmmlwuwmpv en el panel izquierdo.
+-- 2) Entre a Importar y cargue este archivo.
+-- 3) Este archivo NO usa la instrucción USE, por eso funciona en Clever Cloud.
+-- 4) Borra y recrea las tablas, luego carga datos reales de prueba.
+-- ================================================================
+
+-- ================================================================
 -- Base de datos SGI Ferretería Elohim - Versión alineada al ER
 -- Ejecutar en phpMyAdmin dentro de la base MySQL de Clever Cloud.
 -- Incluye entidades: CLIENTE, CONSUMIDOR_FINAL, CONTRIBUYENTE y MOVIMIENTO_INVENTARIO.
